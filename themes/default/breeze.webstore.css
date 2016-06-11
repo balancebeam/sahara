@@ -1,0 +1,386 @@
+.breeze-webstore{
+	width : 1200px;
+	height : 100%;
+	margin : 0 auto;
+	font-size : 14px 'Open Sans',arial,sans-serif;
+	background-color :#ECECEC;
+}
+.breeze-webstore>.panel{
+	width : 238px;
+	height : 100%;
+	border-left : 1px solid #BDBDBD;
+	border-right : 1px solid #BDBDBD;
+	background-color : #ECECEC;
+	position : fixed;
+	z-index : 3;
+}
+.breeze-webstore>.panel>.header{
+	margin-left: 10px;
+    padding-top: 5px;
+	color: #262626;
+	cursor : pointer;
+}
+.breeze-webstore>.panel>.header>.logo{
+	float: left;
+	width : 32px;
+	height : 32px;
+	display: inline-block;	
+	background : url(images/webstore-logo.png);
+}
+.breeze-webstore>.panel>.header>.text{
+	float: left;
+	width: 185px;	
+    position: relative;
+    top: 5px;
+    font-size: 16px;
+    padding-left: 5px;    
+}
+.breeze-webstore>.panel>.search{	
+    border: 1px solid #BDBDBD;
+    box-shadow: 0 2px 2px #ECECEC inset, 0 1px 1px #FFFFFF;
+    font-family : 12px 'Open Sans',arial,sans-serif;
+	width: 197px;   
+    height: 24px;
+    margin-left: 8px;
+    margin-top: 12px;
+    outline: medium none;
+    padding: 2px 2px 2px 20px;   
+	background-color: #FFFFFF;	
+}
+.breeze-webstore>.panel>.navigator{
+	width: 216px;	
+    overflow-y: auto;
+    padding: 0 5px 0 10px;
+    position: absolute;
+    right: 7px;
+    top: 95px;
+	bottom: 20px;    
+}
+.breeze-webstore>.panel>.navigator>.container{
+	font-weight: bold 13px;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+	height : 600px;
+}
+
+.breeze-webstore>.main{
+	width : 960px;
+	position : relative;
+	margin-left : 240px;
+	display : inline-block;
+	color: #333333;
+}
+.breeze-webstore>.main>.header{
+	width : 959px;
+	height : 39px;	
+	position : fixed;
+	z-index : 3;
+	border-right : 1px solid #BDBDBD;
+	border-bottom : 1px solid #BDBDBD;
+	background-color : #ECECEC;
+}
+.breeze-webstore>.main>.content{
+	width : 960px;
+	margin-top : 40px;
+	position : relative;	
+	overflow : hidden;
+	display : inline-block;
+}
+.breeze-webstore>.main>.content>.container{
+	background-color :#ECECEC;
+	padding-bottom: 200px;
+}
+.breeze-webstore  .loading{
+	width: 64px;
+	height: 64px;
+	margin: 10px auto;
+	background: url(images/loading.gif);	
+}
+.breeze-webstore .stars{
+	padding-top: 4px;
+	height: 10px;
+	width: 55px;
+}
+.breeze-webstore .star{
+	float: left;
+    height: 10px;
+    width: 11px;
+    background : url(images/webstore-star.png);
+}
+.breeze-webstore .unstar{
+	background : url(images/webstore-unstar.png);
+}
+.breeze-webstore .download{
+	cursor : pointer;
+	height : 23px;
+	line-height : 23px;
+	text-align : center;
+	background : #4d7bd6 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAARCAQAAACVkV9MAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAAAEgAAABIAEbJaz4AAAAJdnBBZwAAABMAAAARAMNJ7iwAAACPSURBVCjPjZJRDsMgDENfCAfY1+5/vh2g0iRI9gG0AbUa/glGiWMZxNlB2urabcutyDnmFUAUaxc+q3WPSqiX77DUI0+xafHmD2eQRqV7WiHqFtWUe+i89CmYNAWCyYsMJP8AyBsDyohltFUOUuAHBTDqojbmOgrfm93/kBfePJZF+8ztUlcSRp3fVPb+2w/RaCkkhrW/agAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=) no-repeat 10px 3px;
+	font-weight : bold;
+	color : #FFF;
+	font-size : 12px;
+	text-indent  : 10px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+	border : 1px solid #2d53af;
+	border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 2px 0 0 rgba(255, 255, 255, 0.06) inset, 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.breeze-webstore .download:hover{
+	background-color : #639AFF;
+	border : 1px solid #4076FF;
+}
+.breeze-webstore .tile{
+	display: inline;
+}
+.breeze-webstore .tile .body{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid #C6C6C6;
+    border-right: 1px solid #C6C6C6;
+    height: 199px;
+    width: 239px;
+    overflow : hidden;
+	color: #1C5AC4;
+	cursor: pointer;
+}
+.breeze-webstore .tile.metro .body{
+	height: 399px;
+    width: 479px;
+}
+.breeze-webstore .left{
+	float: left;
+}
+.breeze-webstore .right{
+	float: right;
+}
+.breeze-webstore .tile .wrapper{
+	width: 100%;
+	height: 100%;
+    position: relative;
+    vertical-align: top;    
+    background-color: #F8F8F8;
+    border-bottom: 1px solid #C6C6C6;
+}
+.breeze-webstore .tile .wrapper .icon{
+	height: 140px;
+    width: 220px;	
+    margin: -1px;
+    left: 10px;
+    top: 10px;
+    position: absolute;
+	border: 1px solid #DDDDDD;
+    background-color: #CCCCCC;
+}
+.breeze-webstore .tile.metro .wrapper .icon{
+	height: 340px;
+    width: 460px;
+}
+.breeze-webstore .tile .wrapper .company{
+	height: 19px;
+    width: 13px;
+    position: absolute;
+	bottom: 7px;
+    right: 9px;
+    overflow: hidden;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAATCAQAAADhPk8cAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAAAEgAAABIAEbJaz4AAAAJdnBBZwAAAA0AAAATAMij70UAAADFSURBVCjPrdExSwMBDMXxX44r7XJUQaRDBR2qCIKTmx/ATfArO7m4ioK4qHgKolWvBatxsEWHdhHzhsD7E8hLIi2qwl9Q+d2ibUvPSNu7sbMcEonYtO3UdSZR2dV3lSeSHYc66Uf2VImuI2u/wUyFgaHb+RtWmvyYj8KC1IWRMtrzc73o6rucGTHQk8JF4cGnjWhNQcdNHmtZcV9k7dnEfnQgx9ngzVNmgXO10kGsTydLYTI9FLGsb9WSWqlx5zFf47//9QVOsEo/B6BgmgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=") no-repeat scroll 0 0 transparent;
+}
+.breeze-webstore .tile .wrapper .brief{
+	height: 49px;
+	width : 211px;
+	left: 0;
+	bottom : 0;
+	position: absolute;   
+}
+.breeze-webstore .tile.metro .wrapper .brief{
+    width: 479px;
+}
+.breeze-webstore .tile .wrapper .title{
+	color: #262626;
+	font-size: 13px;
+    font-weight: bold;
+	width:	211px;
+	top: 8px;
+	left: 19px;
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.breeze-webstore .tile.metro .wrapper .title{
+	width: 250px;
+}
+.breeze-webstore .tile .wrapper .stars{    
+	top:	26px;
+	left:	19px;
+	position:	absolute;	
+}
+.breeze-webstore .hover-tile{
+	height: 100%;
+    width: 100%;
+    z-index: 2;
+    position : relative;
+    background-color: #ECECEC;
+}
+.breeze-webstore .hover-tile .icon{
+	position : absolute;
+	right : 10px;
+	top : 17px;
+	width : 64px;
+	height : 64px;
+}
+.breeze-webstore .hover-tile .brief{
+	position : absolute;
+	left : 21px;
+	top : 24px;
+	width : 130px;
+}
+.breeze-webstore .hover-tile .title{
+	width : 130px;
+	max-height : 38px;
+	overflow : hidden;
+	color : #262626;
+	font-size: 13px;
+    font-weight: bold;
+}
+.breeze-webstore .hover-tile .users{
+	padding-top : 5px;
+	font-size : 12px;
+}
+.breeze-webstore .hover-tile .summary{
+	position : absolute;
+	left : 20px;
+	top : 90px;
+	height : 68px;
+	width : 200px;
+	overflow: hidden;
+	color : #666;
+	font-size : 12px;
+	word-wrap: break-word;
+    text-overflow: ellipsis;	
+}
+.breeze-webstore .hover-tile .download{
+	position : absolute;
+	bottom : 10px;
+	left : 50%;
+	margin-left : -70px;
+	width : 138px;
+}
+.breeze-webstore .hover-metro{
+	height: 49px;
+    width: 479px;
+    position: absolute;
+    left: 0;
+	bottom: 0;
+	 z-index : 2;
+    overflow: hidden;
+    background-color: #ECECEC;  
+}
+.breeze-webstore .tile.hover .wrapper{
+	background-color: #ECECEC;
+}
+.breeze-webstore .hover-metro .title{
+	width: 250px;
+	color: #262626;
+    font-size: 13px;
+    font-weight: bold;
+    left: 19px;
+	top: 8px;    
+    position: absolute;
+	overflow: hidden;
+    text-overflow: ellipsis;   
+    white-space: nowrap;
+}
+.breeze-webstore .hover-metro .users{
+    left: 19px;
+	top: 26px;
+	position: absolute;
+    overflow: hidden;
+    padding-top: 4px;   
+    width: 250px;
+    font-size: 12px;
+}
+.breeze-webstore .hover-metro .summary{
+	position : absolute;
+	left : 19px;
+	top : 60px;
+	width: 430px;
+	height : 50px;
+	word-wrap : break-word;
+	overflow: hidden;
+    text-overflow: ellipsis;
+	color : #666;
+	font-size : 12px;
+}
+.breeze-webstore .hover-metro .download{
+	width : 160px;
+	right: 9px;
+	top: 9px;
+	position : absolute;
+}
+.breeze-webstore .list{
+	background-color :	#F8F8F8;
+	border-bottom: 1px solid #C6C6C6;
+    border-right: 1px solid #C6C6C6;
+    cursor: pointer;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 100%;
+	margin-left: -1px;
+}
+.breeze-webstore .list:hover{
+	background-color :#ECECEC;
+}
+.breeze-webstore .list .cell1{
+	padding: 0 25px;
+	width: 52px;
+}
+.breeze-webstore .list .icon{
+	width : 48px;
+	height : 48px;
+}
+.breeze-webstore .list .cell2{
+	width: 450px;
+	padding: 5px 25px 0 0;
+	vertical-align: top;
+}
+.breeze-webstore .list .title{
+	color: #262626;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.breeze-webstore .list .author{
+	padding: 3px 20px 5px 0;
+	color: #262626;
+    display: inline-block;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+}
+.breeze-webstore .list .summary{
+	width: 450px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    color: #666666;
+    font-size: 12px;
+}
+.breeze-webstore .list .cell3{
+	vertical-align: top;
+	padding: 5px 25px 0 0;
+}
+.breeze-webstore .list .users{
+	color: #666666;
+    font-size: 12px;
+    margin-bottom: 4px;
+    padding-top: 4px;
+}
+.breeze-webstore .list .cell4{
+	padding: 0 25px 0 0;
+	width: 200px;
+}
+.breeze-webstore .list .download{
+	width : 160px;
+}
+
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home</title>
+
+<link rel="stylesheet" type="text/css" href="../themes/default/breeze.uncompressed.css"></link>
+<link rel="stylesheet" type="text/css" href="../lib/jquery/themes/base/jquery.ui.all.css"></link>
+<link rel="stylesheet" type="text/css" href="css/index.css"></link>
+<script type="text/javascript" src="../lib/jquery-1.6.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.mouse.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.draggable.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.resizable.js"></script>
+<script type="text/javascript" src="../lib/breeze.js"></script>
+<script type="text/javascript" src="../lib/layout/breeze.container.js"></script>
+<script type="text/javascript" src="../lib/layout/breeze.borderlayout.js"></script>
+
+<script type="text/javascript" src="../lib/desktop/breeze.desktop.js"></script>
+<script type="text/javascript" src="../lib/desktop/breeze.desktop.taskbar.js"></script>
+<script type="text/javascript" src="../lib/desktop/breeze.desktop.dock.js"></script>
+<script type="text/javascript" src="../lib/desktop/breeze.shortcut.js"></script>
+<script type="text/javascript" src="../lib/desktop/breeze.metro.js"></script>
+
+<script type="text/javascript" src="../lib/dialog/breeze.dialog.js"></script>
+<script type="text/javascript" src="../lib/tree/breeze.tree.js"></script>
+
+<script type="text/javascript" src="../lib/assemble/breeze.resource.js"></script>
+<script type="text/javascript" src="../lib/menu/breeze.menu.js"></script>
+<script type="text/javascript" src="../lib/menu/breeze.dock.js"></script>
+
+<script type="text/javascript" src="../lib/grid/breeze.grid.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.scroller.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.dropmenu.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.toolbar.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.draggable.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.resizable.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.paging.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.lockrow.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.sortable.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.selectable.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.rownumber.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.mergecol.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.treeview.js"></script>
+
+<script type="text/javascript" src="pages/grid/grid_data.js"></script>
+<script type="text/javascript" src="pages/grid/grid_largedata.js"></script>
+<script type="text/javascript" src="navigatorDataProvider.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+		$("#desktop").desktop({
+			height : "100%",
+			shortcutAdapter: "shortcut",
+			//bgImg:"../themes/default/images/blue_glow.jpg",
+			plugins : {
+				taskbar : {
+					username : "Administrator",
+					settings:[
+						//{iconURL:"css/images/setting.png",title:"设置",onClick: function(){alert(1);}},
+						//{seperator: true},
+						{iconURL:"css/images/view_tree.png",title:"导航视图",onClick: function(){window.location="tree_view.html";}},
+						{iconURL:"css/images/windows.png",title:"Metro视图",onClick: function(){window.location="metro_view.html";}}
+					]
+				},
+				dock : {
+					dataProvider : [
+						{
+							id : "diary",
+							title : "日记本",
+							iconURL : "css/images/desktop/diary.png",					
+							url : "app/diary.html"
+						},
+						{
+							id : "folder",
+							title : "文件夹",
+							iconURL :"css/images/desktop/file_folder.png",
+							url : "demo/grid/grid_base.html"
+						},
+						{
+							id : "big",
+							title : "时钟",
+							iconURL : "css/images/desktop/big.png",
+							url : "app/big.html"
+						},
+						{
+							id : "workflow",
+							title : "工作流程",
+							iconURL : "css/images/desktop/workflow.png",
+							url : "app/workflow.html"
+						},
+						{
+							id : "email",
+							title : "电子邮件",
+							iconURL : "css/images/desktop/email.png",				
+							url : "app/email.html"
+						},
+						{
+							id : "attendance",
+							title : "议程表",
+							iconURL : "css/images/desktop/attendance.png",
+							url : "app/attendance.html"
+						}	
+					]
+				}
+			},
+			dataProvider :  navigatorDataProvider,
+			shortcuts:[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],[]]
+			//,shortcuts:[[{x:1,y:2,col:1,row:1,ref:"1"},{}]]
+		});
+		$("#desktop").desktop("resize");
+	});	
+
+
+</script>
+</head>
+<body>
+	<div id="desktop"></div>
+</body>
+</html>

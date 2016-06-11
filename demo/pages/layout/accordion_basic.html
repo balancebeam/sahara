@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>布局容器</title>
+
+<script type="text/javascript" context="{}">
+$(function(){
+	$("#accordion2",getOwnerContext()).accordion({
+		height : "400px",
+		width : "500px",
+		dataProvider : [{
+			id : "aa",
+			title : "aa",
+			selected : true,
+			html : "#aa"
+		},
+		{
+			id : "bb",
+			title : "bb",			
+			html : "#bb"
+		},
+		{
+			id : "cc",
+			title : "cc",
+			
+			html : "#cc"
+		},
+		{
+			id : "dd",
+			title : "dd",
+			html : "helloworld"
+			
+		},
+		{
+			id : "ee",
+			title : "ee",			
+			html : "#ee"
+		}
+		]	
+	});	
+});
+</script>
+</head>
+<body>
+	<div id="accordion2" style="margin:5px;">
+		<div id="aa">aa</div>
+		<div id="bb">bb</div>
+		<div id="cc">cc</div>
+		<div id="dd">dd</div>
+		<div id="ee">ee</div>
+	</div>	
+</body>
+</html>

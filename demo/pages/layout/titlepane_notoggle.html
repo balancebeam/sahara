@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>布局容器</title>
+
+<script type="text/javascript" context="{}">
+$(function(){
+	var container = $("#titlepane",getOwnerContext());
+	container.titlepane({
+		width : "500px",
+		height : "auto",
+		title:"No Closable",		
+		toggleable: false,
+		node:$("#hello",getOwnerContext()),
+		expanded:true
+	});
+	container.titlepane("resize");
+});
+</script>
+</head>
+<body>
+	<div id="titlepane" style="margin:5px;">
+		<div id="hello">
+			123<br>
+			123<br>
+			123<br>
+			123<br>
+			123<br>
+			123<br>
+			123<br>
+		</div>
+	</div>
+</body>
+</html>

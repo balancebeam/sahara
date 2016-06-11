@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>基本树</title>
+<script type="text/javascript" context="{}">
+$(function(){
+	var demo = $("#tree",getOwnerContext());
+	demo.tree({
+		dataProvider : treeDataProvider,
+		plugins:{
+			edit: true
+		}
+	});	
+	$("#updateNode",getOwnerContext()).click(function(e){
+		var treeNode = demo.tree("getSelected");
+		if(treeNode!=null){		
+			treeNode.getData()["title"] = new Date().toString();
+			demo.tree("getPlugin","edit").update(treeNode);
+		}
+	});
+});
+</script>
+</head>
+<body>
+	<button id="updateNode">Update Node</button>
+	<div id="tree"></div>
+</body>
+</html>

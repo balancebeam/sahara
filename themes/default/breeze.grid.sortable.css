@@ -1,0 +1,18 @@
+.breeze-grid .headers .header div.th.sortable{
+	/*background : url(images/grid-header-over-bg.gif);*/
+}
+.breeze-grid .headers .header div.th .sortable{
+	width : 8px;
+	height : 5px;
+	overflow : hidden;
+	position : absolute;
+	top : 1px;
+	left : 50%;
+	margin-left : -4px;
+}
+.breeze-grid .headers .header div.th .sortable.asc{
+	background : url(images/grid-sort-asc.gif);
+}
+.breeze-grid .headers .header div.th .sortable.desc{
+	background : url(images/grid-sort-desc.gif);
+}

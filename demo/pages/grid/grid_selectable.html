@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>多选选择</title>
+
+
+<script type="text/javascript" context="{}">
+$(function(){
+	var element = $("#grid",getOwnerContext());
+	element.grid({
+			width: "100%",
+			height : "100%",
+			noborder: true,
+			layout : [
+				[[
+					{title:"company",width : 200,filedIndex : 0},
+					{title:"price",width : 100,filedIndex : 1},
+					{title:"change",width : 100,filedIndex : 2, format : change},
+					{title:"pctChange",width : 100,filedIndex : 3, format : change},
+					{title:"lastChange",width : 100,filedIndex : 4}
+				]]
+			],		
+			dataProvider : gridDataProvider,
+			plugins : {
+				selectable : {
+					checklogic : "multiple" //single
+				}
+			}
+		});
+	element.grid("resize");
+});
+
+</script>
+</head>
+<body>
+	<div id="grid" ></div>
+</body>
+</html>

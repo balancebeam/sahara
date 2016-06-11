@@ -1,0 +1,31 @@
+.breeze-grid .headers .col-resize{
+	position : absolute;
+	top : 0;
+	right : 0;
+	width : 3px;
+	height : 100%;
+	overflow : hidden;
+	cursor : col-resize;
+	display : none;
+	z-index : 2;
+}
+.breeze-grid .headers .th .col-resize{
+	display : block;
+	visibility : visible;
+}
+.breeze-grid .headers .resize-proxy{
+	position : absolute;
+	top : 0;
+	border-left : 1px dashed #000;
+	display : none;
+	width : 0px;
+	z-index : 3;
+	font-size : 1px;
+}
+.breeze-grid .headers .resize-proxy span{
+	position : absolute;
+	top : -2px;
+	left : 2px;
+	font-size : 10px;
+	font-style : italic;
+}

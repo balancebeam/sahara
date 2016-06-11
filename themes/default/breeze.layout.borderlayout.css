@@ -1,0 +1,223 @@
+.breeze-borderlayout{
+	background-color : #DFE8F6;
+	position : relative;
+	overflow : hidden;
+	text-align : left;
+}
+.breeze-borderlayout>.y-region{
+	position: absolute;
+	left: 5px;
+	right: 5px;
+}
+.breeze-borderlayout .x-region{
+	position : absolute;
+	top : 0;
+	height : 100%;
+	overflow : hidden;
+}
+.breeze-borderlayout .no-collapse>.region-header>.region-collapse{
+	display : none;
+}
+.breeze-borderlayout .dragging{
+	background : #C2C2C2;
+	z-index : 1000;
+	-moz-user-select : none;
+	-webkit-user-select : none;
+}
+.breeze-borderlayout .dragging .region-collapse{
+	display: none;
+}
+/********************************************************** 容器表头 **********************************************************/
+.breeze-borderlayout .region-header{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	border : 1px solid #99BCE8;
+	border-bottom-width : 0;
+	height : 15px;
+	padding : 5px 4px 4px 5px;
+	overflow : hidden;
+	background : url(images/borderlayout-header-top-bg.gif) repeat-x;
+}
+.breeze-borderlayout .untitled>.region-header{
+	display : none;
+}
+.breeze-borderlayout .collapsed .region-header{
+	display : block;
+	border-bottom-width : 1px;
+}
+.breeze-borderlayout .x-region.collapsed .region-header{
+	height: auto;
+	bottom: 0;
+}
+.breeze-borderlayout  .region-header>.region-collapse{
+	float : right;
+	width : 15px;
+	height : 15px;
+	cursor : default;
+}
+.breeze-borderlayout  .region-header>.region-title{
+	color: #04408C;
+    font: bold 12px tahoma,arial,verdana,sans-serif;
+    overflow : hidden;
+}
+/********************************************************** 容器内容区 **********************************************************/
+.breeze-borderlayout .region-body{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 25px;
+	bottom: 0;
+	border : 1px solid #99BCE8;
+	background-color : #FFF;
+}
+.breeze-borderlayout .collapsed>.region-body{
+	display : none;
+}
+.breeze-borderlayout .untitled>.region-body{
+	top: 0;
+}
+/********************************************************** 纵向分隔条 **********************************************************/
+.breeze-borderlayout  .y-splitter{
+	position : absolute;
+	height: 5px;
+    left: 5px;
+	right: 5px;
+	overflow : hidden;
+}
+.breeze-borderlayout  .y-splitter.draggable{
+	cursor : n-resize;
+}
+.breeze-borderlayout  .y-splitter.collapsed{
+	cursor : default !important;
+}
+.breeze-borderlayout  .y-splitter .region-collapse{
+	height : 5px;
+	width : 35px;
+	overflow : hidden;
+	margin : auto;
+	cursor : default;
+}
+/********************************************************** 横向分隔条 **********************************************************/
+.breeze-borderlayout  .x-splitter{
+	position : absolute;
+	width: 5px;
+	height : 100%;
+    top: 0;
+	overflow : hidden;
+}
+.breeze-borderlayout  .x-splitter.draggable{
+	cursor : w-resize;
+}
+.breeze-borderlayout  .x-splitter.collapsed{
+	cursor : default !important;
+}
+.breeze-borderlayout  .x-splitter .region-collapse{
+	width : 5px;
+	height : 35px;
+	overflow : hidden;
+	position : absolute;
+	top : 50%;
+	margin-top : -17px;
+	cursor : default;
+}
+
+/********************************************************** North Region **********************************************************/
+.breeze-borderlayout .north-region .region-collapse{
+	background : url(images/global-sprites.gif) no-repeat 0 -210px; 
+}
+.breeze-borderlayout .north-region .region-collapse:hover{
+	background : url(images/global-sprites.gif) no-repeat -15px -210px; 
+}
+.breeze-borderlayout .north-region.collapsed .region-collapse{
+	background : url(images/global-sprites.gif) no-repeat 0 -195px; 
+}
+.breeze-borderlayout .north-region.collapsed .region-collapse:hover{
+	background : url(images/global-sprites.gif) no-repeat -15px -195px; 
+}
+.breeze-borderlayout .north-splitter .region-collapse{
+	background : url(images/borderlayout-toggle-top.gif);
+}
+.breeze-borderlayout .north-splitter.collapsed .region-collapse{
+	background : url(images/borderlayout-toggle-bottom.gif);
+}
+/********************************************************** South Region **********************************************************/
+.breeze-borderlayout .south-region .region-collapse{
+	background : url(images/global-sprites.gif) no-repeat 0 -195px; 
+}
+.breeze-borderlayout .south-region .region-collapse:hover{
+	background : url(images/global-sprites.gif) no-repeat -15px -195px; 
+}
+.breeze-borderlayout .south-region.collapsed .region-collapse{
+	background : url(images/global-sprites.gif) no-repeat 0 -210px; 
+}
+.breeze-borderlayout .south-region.collapsed .region-collapse:hover{
+	background : url(images/global-sprites.gif) no-repeat -15px -210px; 
+}
+.breeze-borderlayout .south-splitter .region-collapse{
+	background : url(images/borderlayout-toggle-bottom.gif);
+}
+.breeze-borderlayout .south-splitter.collapsed .region-collapse{
+	background : url(images/borderlayout-toggle-top.gif);
+}
+/********************************************************** Viewport **********************************************************/
+.breeze-borderlayout>.region-viewport{
+	position : absolute;
+	width : 100%;
+	overflow : hidden;
+}
+.breeze-borderlayout>.region-viewport>.collapsed>.region-header{
+	background : url(images/borderlayout-header-left-bg.gif) repeat-y;
+}
+.breeze-borderlayout>.region-viewport>.collapsed>.region-header>.region-title{
+	margin-top :5px;
+	margin-right :3px;
+	text-align : center;
+	float :right;
+	width : 11px;
+	height : auto;
+	overflow : static;
+	word-wrap:break-word;
+}
+/********************************************************** West Region **********************************************************/
+.breeze-borderlayout .west-region .region-collapse{
+	background : url(images/global-sprites.gif) no-repeat 0 -180px; 
+}
+.breeze-borderlayout .west-region .region-collapse:hover{
+	background : url(images/global-sprites.gif) no-repeat -15px -180px; 
+}
+.breeze-borderlayout .west-region.collapsed .region-collapse{
+	background : url(images/global-sprites.gif) no-repeat 0 -165px; 
+}
+.breeze-borderlayout .west-region.collapsed .region-collapse:hover{
+	background : url(images/global-sprites.gif) no-repeat -15px -165px; 
+}
+.breeze-borderlayout  .west-splitter .region-collapse{
+	background : url(images/borderlayout-toggle-left.gif);
+}
+.breeze-borderlayout  .west-splitter.collapsed .region-collapse{
+	background : url(images/borderlayout-toggle-right.gif);
+}
+
+/********************************************************** East Region**********************************************************/
+.breeze-borderlayout .east-region .region-collapse{
+	background : url(images/global-sprites.gif) no-repeat 0 -165px; 
+}
+.breeze-borderlayout .east-region .region-collapse:hover{
+	background : url(images/global-sprites.gif) no-repeat -15px -165px; 
+}
+.breeze-borderlayout .east-region.collapsed .region-collapse{
+	background : url(images/global-sprites.gif) no-repeat 0 -180px; 
+}
+.breeze-borderlayout .east-region.collapsed .region-collapse:hover{
+	background : url(images/global-sprites.gif) no-repeat -15px -180px; 
+}
+.breeze-borderlayout  .east-splitter .region-collapse{
+	background : url(images/borderlayout-toggle-right.gif);
+}
+.breeze-borderlayout  .east-splitter.collapsed .region-collapse{
+	background : url(images/borderlayout-toggle-left.gif);
+}
+/********************************************************** Center Region **********************************************************/
+

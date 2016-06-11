@@ -1,0 +1,17 @@
+.breeze-grid .treeview{
+	height : 20px;
+	overflow : hidden;
+	padding-left : 12px;
+	position : relative;
+}
+.breeze-grid .treeview .arrow{
+	position : absolute;
+	left : 0;
+	top : 2px;
+	height : 16px;
+	width : 16px;
+	background : url(images/grid-treeview-closed.png);
+}
+.breeze-grid .treeview .arrow.opened{
+	background : url(images/grid-treeview-opened.png);
+}

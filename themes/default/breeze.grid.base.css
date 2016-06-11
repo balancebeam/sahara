@@ -1,0 +1,79 @@
+﻿.breeze-grid{
+	position : relative;
+	border : 1px solid #99bbe8;	
+	text-align : left;
+}
+.breeze-grid .headers{
+	z-index : 2;
+	position : relative;
+	background : url(images/grid-header-bg.gif);
+	border-bottom : 1px solid #99bbe8;
+}
+.breeze-grid .headers .header{
+	top : 0;
+	position : absolute;
+	overflow : hidden;	
+}
+.breeze-grid .headers .header .inner{
+	top : 0;
+	height : 100%;
+	position : absolute;
+}
+.breeze-grid .headers .header table{	
+	table-layout : fixed;
+	width : 100%;
+	height : 100%;
+}
+.breeze-grid .headers .header div.th{
+	cursor : default;
+	position : relative;
+	height : 24px;
+	line-height : 24px;
+	overflow : hidden;
+	text-indent : 5px;
+	text-overflow : ellipsis;
+	border-right : 1px solid #D0D0D0;
+	border-bottom : 1px solid #99bbe8;
+}
+.breeze-grid .headers .header tr.splitter div.th{
+	border-bottom : 0;
+}
+/*** 鼠标滑动样式 ***/
+.breeze-grid .headers .header div.th:hover{
+	background : url(images/grid-header-over-bg.gif);
+}
+/*** 多标题 ***/
+.breeze-grid .headers .header div.th.multi{
+	border-bottom : 1px solid #D0D0D0;
+}
+.breeze-grid .contents{
+	position : relative;
+	overflow : hidden;
+}
+.breeze-grid .contents .content{
+	position : absolute;
+}
+.breeze-grid .contents .content .viewport{
+	position : absolute;
+	overflow : hidden;
+	width : 100%;
+}
+.breeze-grid .contents .content .viewport .inner{
+	position : absolute;
+}
+.breeze-grid .contents .content .viewport table{
+	table-layout : fixed;
+	width : 100%;
+}
+.breeze-grid .contents tr.odd{
+	background-color : #FAFAFA;
+}
+.breeze-grid .contents .content .viewport table div.td{
+	height : 20px;
+	line-height : 20px;
+	overflow : hidden;
+	text-overflow : ellipsis;
+	text-indent : 5px;
+	border-right : 1px solid #D0D0D0;
+	border-bottom : 1px solid #EDEDED;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Desktop Metro</title>
+<script type="text/javascript">
+$(function(){
+		$("#desktop").desktop({
+			height : "100%",
+			shortcutAdapter: {style:"metro",params:{color:"orange"}},
+			plugins : {
+				taskbar : {
+					username : "Administrator"					
+				},
+				dock : {
+					dataProvider : [
+						{
+							id : "diary",
+							title : "diary",
+							iconURL : "css/images/desktop/diary.png"							
+						},
+						{
+							id : "folder",
+							title : "folder",
+							iconURL :"css/images/desktop/file_folder.png"							
+						},
+						{
+							id : "big",
+							title : "clock",
+							iconURL : "css/images/desktop/big.png"
+						},
+						{
+							id : "workflow",
+							title : "workflow",
+							iconURL : "css/images/desktop/workflow.png"
+						},
+						{
+							id : "email",
+							title : "email",
+							iconURL : "css/images/desktop/email.png"		
+						},
+						{
+							id : "attendance",
+							title : "attendance",
+							iconURL : "css/images/desktop/attendance.png"
+						}	
+					]
+				}
+			},
+			dataProvider:[
+				{
+					id: "1",					
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : "images/sahara1.jpg"				
+				},
+				{
+					id: "2",
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : "images/sahara2.jpg"
+				},
+				{
+					id: "3",
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : "images/sahara3.jpg"
+				},
+				{
+					id: "4",
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : ["images/sahara4.jpg","images/sahara20.jpg"]
+				},
+				{
+					id: "5",
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : "images/sahara5.jpg"					
+				},
+				{
+					id: "6",
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : "images/sahara6.jpg"
+				},
+				{
+					id: "7",
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : "images/sahara7.jpg"
+				},
+				{
+					id: "8",
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : "images/sahara8.jpg"
+				},
+				{
+					id: "9",
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : "images/sahara9.jpg"
+				},				
+				{
+					id: "11",
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : ["images/sahara10.jpg","images/sahara19.jpg"]
+				},
+				{
+					id: "12",
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : "images/sahara11.jpg"
+				},
+				{
+					id: "10",
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : ["images/sahara12.jpg","images/sahara16.jpg","images/sahara15.jpg"]
+				},
+				{
+					id: "13",
+					row: 1,
+					col: 3,
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : "images/sahara13.jpg"
+				},
+				{
+					id: "14",
+					title: "Desert",
+					url: "pages/grid/grid_objectlist.html",
+					iconURL : "images/sahara14.jpg"
+				}
+			],
+			shortcuts:[[{id:"1",row: 2,col: 2,x: 0,y: 0},{id:"2",row: 1,col: 1,x: 2,y: 0},{id:"4",row: 1,col: 1,x: 2,y: 1}],[]]
+		});
+		$("#desktop").desktop("resize");
+	});	
+
+
+</script>
+</head>
+<body>
+	<div id="desktop"></div>
+</body>
+</html>

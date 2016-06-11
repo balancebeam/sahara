@@ -1,0 +1,133 @@
+.breeze-tree{
+	text-align: left;
+	background: transparent;
+	position: relative;
+	overflow: hidden;
+}
+.breeze-tree .node{
+	overflow: hidden;
+	white-space: nowrap;
+}
+.breeze-tree .node>.header{
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+}
+.breeze-tree .node>.header:hover{
+	/* background: #E2EFF8; */
+}
+.breeze-tree .node>.header:hover>.title{
+	text-decoration: underline;
+}
+/*** 根结点 ***/
+.breeze-tree>.node.root>.header{
+	font-weight: bold;
+}
+.breeze-tree .header>.status, 
+.breeze-tree .header>.logic, 
+.breeze-tree .header>.icon{
+	width: 16px;
+	height: 16px;
+	margin: 2px;
+	overflow: hidden;
+	display: inline-block;
+}
+.breeze-tree .header>.logic{
+	display: none;
+	background: url(images/grid-menu-unchecked.gif);
+}
+.breeze-tree .header>.title{
+	text-indent: 3px;
+	overflow: hidden;
+	height: 20px;
+	line-height: 20px;
+	cursor: default;
+	display: inline-block;
+}
+/* 关闭的样式 */
+.breeze-tree .node.collapsed>.header>.status{
+	background: url(images/tree_plus.gif) no-repeat;
+}
+/* 展开的样式 */
+.breeze-tree .node.expanded>.header>.status{
+	background: url(images/tree_minus.gif) no-repeat;
+}
+/* 关闭的样式 */
+.breeze-tree .node.collapsed>.header>.icon{
+	background: url(images/tree_collapse.gif) no-repeat;
+}
+/* 展开的样式*/
+.breeze-tree .node.expanded>.header>.icon{
+	background: url(images/tree_expand.gif) no-repeat;
+}
+/* 叶子结点的样式 */
+.breeze-tree .node.leaf>.header>.status{
+}
+/* 叶子结点的样式 */
+.breeze-tree .node.leaf>.header>.icon{
+	background: url(images/tree_leaf.gif) no-repeat;
+}
+/* XHR加载等待的样式 */
+.breeze-tree .node.loading>.header>.status{
+	background: url(images/tree_loading.gif) no-repeat !important;
+}
+/* 子树样式 */
+.breeze-tree .subtree{
+	clear: left;
+	display: none;
+	overflow: hidden;
+}
+/* 隐藏跟结点的样式 */
+.breeze-tree>.root.noroot>.header{
+	display: none;
+}
+/* 隐藏跟结点的样式 */
+.breeze-tree>.root.noroot{
+	margin-left: -16px;
+}
+/* 选中结点的样式 */
+.breeze-tree .node.selected>.header{
+	background: #E2EFF8;
+}
+.breeze-tree.logic .header>.logic{
+	display: inline-block;
+}
+.breeze-tree.logic .node>.header>.logic.checked{
+	background: url(images/grid-menu-checked.gif);
+}
+.breeze-tree.logic .node>.header>.logic.disabled{	
+}
+/* 半选状态 */
+.breeze-tree.logic .node>.header>.logic.checked.half{
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+.breeze-tree .drag-proxy{
+	position : absolute;
+	padding-left : 18px;
+	height : 25px;
+	line-height : 25px;
+	z-index : 2;
+	border : 1px solid #E1E1E1;
+	background : #F7F7F7 url(images/grid-drop-no.gif) no-repeat 2px 4px;
+	-moz-box-shadow:2px 2px 2px #333333;
+	-webkit-box-shadow:2px 2px 2px #333333;
+}
+.breeze-tree .drag-proxy.on{
+	background : #F7F7F7 url(images/grid-drop-yes.gif) no-repeat 2px 4px;
+}
+.breeze-tree .drag-proxy label{
+	white-space : nowrap;
+	padding : 0 5px;
+}
+.breeze-tree .place-proxy{
+	z-index: -1;
+	height: 0;
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	border-top: 1px solid #98C8FF;
+	border-bottom: 1px solid #FFF;
+	display: none;
+}
+

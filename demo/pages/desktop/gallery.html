@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Metro Gallery</title>
+
+<script type="text/javascript">
+	$(function(){
+		$("#gallery").metro({
+			untitled: true,
+			draggable: true,
+			resizable: true,
+			size: 100,
+			column: 9,
+			margin: 5,
+			layout: "free",
+			dataProvider:[
+				{
+					id: "1",
+					row: 1,
+					col: 1,
+					title: "Desert",
+					color: "darkblue",
+					iconURL : "images/sahara1.jpg"				
+				},
+				{
+					id: "2",
+					row: 1,
+					col: 1,
+					title: "Desert",
+					color: "red",
+					iconURL : "images/sahara2.jpg"
+				},
+				{
+					id: "3",
+					row: 2,
+					col: 1,
+					title: "Desert",
+					color: "orange",
+					iconURL : "images/sahara3.jpg"
+				},
+				{
+					id: "4",
+					row: 1,
+					col: 2,
+					title: "Desert",
+					color: "red",
+					iconURL : ["images/sahara4.jpg","images/sahara20.jpg"]
+				},
+				{
+					id: "5",
+					row: 2,
+					col: 2,
+					title: "Desert",
+					color: "purple",
+					iconURL : "images/sahara5.jpg"					
+				},
+				{
+					id: "6",
+					row: 1,
+					col: 1,
+					title: "Desert",
+					color: "red",
+					iconURL : "images/sahara6.jpg"
+				},
+				{
+					id: "7",
+					row: 1,
+					col: 1,
+					title: "Desert",
+					color: "grey",
+					iconURL : "images/sahara7.jpg"
+				},
+				{
+					id: "8",
+					row: 1,
+					col: 2,
+					title: "Desert",
+					color: "orange",
+					iconURL : "images/sahara8.jpg"
+				},
+				{
+					id: "9",
+					row: 1,
+					col: 2,
+					title: "Desert",
+					color: "purple",
+					iconURL : "images/sahara9.jpg"
+				},				
+				{
+					id: "11",
+					row: 3,
+					col: 3,
+					title: "Desert",
+					color: "green",
+					iconURL : ["images/sahara10.jpg","images/sahara19.jpg"],
+					animation: "flip",
+					orientation: "vertical"
+				},
+				{
+					id: "12",
+					row: 2,
+					col: 4,
+					title: "Desert",
+					color: "darkblue",
+					iconURL : "images/sahara11.jpg"
+				},
+				{
+					id: "10",
+					row: 3,
+					col: 2,
+					title: "Desert",
+					color: "yellow",
+					iconURL : ["images/sahara12.jpg","images/sahara16.jpg","images/sahara15.jpg"],
+					animation: "roll",
+					orientation: "horizontal"
+				},
+				{
+					id: "13",
+					row: 1,
+					col: 3,
+					title: "Desert",
+					color: "red",
+					iconURL : "images/sahara13.jpg"
+				},
+				{
+					id: "14",
+					row: 1,
+					col: 3,
+					title: "Desert",
+					color: "green",
+					iconURL : "images/sahara14.jpg"
+				}
+			],
+			onResize: function(){
+				var width = $("#gallery").parent().width();
+				if(width< 800){
+					$("#gallery").metro("changeSize",60);
+				}
+				else if(width<1100){
+					$("#gallery").metro("changeSize",80);
+				}
+				else if(width<1300){
+					$("#gallery").metro("changeSize",100);
+				}
+				else{
+					$("#gallery").metro("changeSize",120);
+				}
+			}
+	});	
+	$("#gallery").metro("resize");
+});
+</script>
+</head>
+<body>
+	<div id="gallery"></div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home</title>
+
+<link rel="stylesheet" type="text/css" href="../themes/default/breeze.uncompressed.css"></link>
+<link rel="stylesheet" type="text/css" href="../lib/jquery/themes/base/jquery.ui.all.css"></link>
+<link rel="stylesheet" type="text/css" href="css/index.css"></link>
+<script type="text/javascript" src="../lib/jquery-1.6.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.mouse.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.draggable.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.resizable.js"></script>
+<script type="text/javascript" src="../lib/breeze.js"></script>
+<script type="text/javascript" src="../lib/layout/breeze.container.js"></script>
+<script type="text/javascript" src="../lib/layout/breeze.borderlayout.js"></script>
+<script type="text/javascript" src="../lib/layout/breeze.tabs.js"></script>
+<script type="text/javascript" src="../lib/menu/breeze.menu.js"></script>
+<script type="text/javascript" src="../lib/menu/breeze.dock.js"></script>
+<script type="text/javascript" src="../lib/layout/breeze.tabs.contextmenu.js"></script>
+<script type="text/javascript" src="../lib/layout/breeze.titlepane.js"></script>
+<script type="text/javascript" src="../lib/desktop/breeze.portal.js"></script>
+<script type="text/javascript" src="../lib/layout/breeze.accordion.js"></script>
+
+<script type="text/javascript" src="../lib/tree/breeze.tree.js"></script>
+<script type="text/javascript" src="../lib/tree/breeze.tree.logic.js"></script>
+<script type="text/javascript" src="../lib/tree/breeze.tree.edit.js"></script>
+<script type="text/javascript" src="../lib/tree/breeze.tree.draggable.js"></script>
+<script type="text/javascript" src="../lib/dialog/breeze.dialog.js"></script>
+<script type="text/javascript" src="../lib/dialog/breeze.messagebox.js"></script>
+
+<script type="text/javascript" src="../lib/grid/breeze.grid.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.scroller.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.dropmenu.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.toolbar.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.draggable.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.resizable.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.paging.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.lockrow.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.sortable.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.selectable.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.rownumber.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.mergecol.js"></script>
+<script type="text/javascript" src="../lib/grid/breeze.grid.treeview.js"></script>
+
+<script type="text/javascript" src="pages/grid/grid_data.js"></script>
+<script type="text/javascript" src="pages/grid/grid_largedata.js"></script>
+
+<script type="text/javascript" src="../lib/prompt/breeze.notify.js"></script>
+
+<script type="text/javascript" src="../lib/form/breeze.form.button.js"></script>
+<script type="text/javascript" src="../lib/form/breeze.form.textbox.js"></script>
+
+<script type="text/javascript" src="navigatorDataProvider.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	breeze.mask.showPageMask();
+	$("#borderlayout").borderlayout({
+		regions : [{
+			region: 'center',
+			untitled : true,
+			html: '#tabs'
+		},{
+			region: 'north',
+			collapsible: false,
+			collapsed : true,
+			untitled : true,	
+			split: true,
+			height: 72,
+			html: '#rootmenu'
+		},{
+			region: 'west',
+			collapsible: true,
+			title: '功能导航',
+			split: true,
+			width: 280,
+			html: '#accordion',
+			draggable : false
+		}]		
+	});
+	$("#accordion").accordion({
+		noborder : true,
+		dataProvider : navigatorDataProvider		
+	});	
+	$("#tabs").tabs({
+		noborder : true,
+		height : "100%",
+		dataProvider : [
+			/*{
+				title : "我的桌面",
+				iconURL : "css/images/tabs_icon.gif",
+				url : "pages/portal/portal.html"
+			}*/
+		],
+		plugins: {
+			contextmenu: true
+		}
+	});
+	$("#borderlayout").borderlayout("resize");
+	setTimeout(function(){
+		breeze.mask.hidePageMask();
+	},2000);
+	
+});
+function switchView(){
+	window.location.href="desktop_view.html";
+}
+</script>
+</head>
+<body>
+	<div id="borderlayout">
+		<div id="rootmenu">
+			<div class="root-inner">
+				<div class="root-bar">
+					<div class="root-user">Administrator</div>
+					<div class="root-sperator">|</div>
+					<div onclick="switchView()" class="root-view" title="切换视图"></div>
+					<!--
+					<div class="root-sperator">|</div>
+					<div class="root-logout" title="退出"></div>
+					-->
+				</div>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+		<div id="accordion"></div>
+		<div id="tabs"></div>
+	</div>
+</body>
+</html>

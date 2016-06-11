@@ -1,0 +1,95 @@
+
+.breeze-messagebox>.body{
+	border: none;
+	background: #CED9E7;	
+}
+.breeze-messagebox,.breeze-messagebox *{
+	-moz-box-sizing: border-box;
+}
+.breeze-messagebox>.body>.content{
+	background-color: #CED9E7;	
+}
+.breeze-messagebox>.body>.content>*{
+	background-color: #CED9E7;	
+}
+.breeze-messagebox .messagebox{
+	padding: 10px 10px 0 10px;
+    width: 240px;	
+}
+.breeze-messagebox .msg{
+	font-family: helvetica,tahoma,verdana,sans-serif;
+    font-size: 13px;
+	overflow: hidden;
+	min-height: 40px;
+	padding-bottom: 10px;
+}
+.breeze-messagebox .icon{
+	float: left;
+    height: 35px;
+    width: 50px;
+}
+.breeze-messagebox .info>.icon{
+	background: url(images/messagebox-info.gif) no-repeat;
+}
+.breeze-messagebox .question>.icon,
+.breeze-messagebox .confirm>.icon,
+.breeze-messagebox .ync>.icon{
+	background: url(images/messagebox-question.gif) no-repeat;
+}
+.breeze-messagebox .warn>.icon{
+	background: url(images/messagebox-warning.gif) no-repeat;
+}
+.breeze-messagebox .error>.icon{
+	background: url(images/messagebox-error.gif) no-repeat;
+}
+.breeze-messagebox .messagebox.prompt-multiline{
+	width: 284px;
+}
+.breeze-messagebox .messagebox.ync{
+	width: 284px;
+}
+.breeze-messagebox input.input{
+	margin-top: 2px;
+	width: 220px;
+	height: 22px;
+	line-height: 18px;
+    vertical-align: middle;
+	border: 1px solid #B5B8C8;
+    padding: 1px 3px;
+	margin: 0;
+	background: url("images/text-bg.gif") repeat-x scroll 0 0 #FFFFFF;
+}
+.breeze-messagebox textarea.input{
+	margin-top: 2px;
+	height: 71px;
+    width: 264px;
+	line-height: normal;
+    overflow: auto;
+    resize: none;
+    vertical-align: middle;
+	border: 1px solid #B5B8C8;
+    padding: 1px 3px;
+	margin: 0;
+	background: url("images/text-bg.gif") repeat-x scroll 0 0 #FFFFFF;
+}
+.breeze-messagebox .buttons{
+	overflow: hidden;
+    padding: 2px 0;
+	margin: 3px 0;
+	height: 25px;
+	width: 100%;
+	text-align: center;
+}
+.breeze-messagebox .buttons>div{
+	 width: 75px;
+	 margin: 0 3px;
+}
+.breeze-messagebox .buttons>.breeze-button.ok,
+.breeze-messagebox .buttons>.breeze-button.yes{
+	background-color: #E4F3FF;
+	background-image: -moz-linear-gradient(center top,#E4F3FF,#D9EDFF 48%, #C2D8F2 52%,#C6DCF6);
+	border-color: #B0CCF2;
+}
+.breeze-messagebox .buttons>.breeze-button.cancel{
+}
+

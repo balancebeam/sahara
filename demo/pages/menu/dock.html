@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" context="{}">
+$(function(){
+	var path = breeze.getBreezeContextPath(),
+		iconPath = path+"demo/css/images/desktop/";
+	$("#dock",getOwnerContext()).dock({		
+		dataProvider : [
+			{
+				id : "diary",
+				title : "diary",
+				iconURL : iconPath+ "diary.png",					
+				url : "http://www.baidu.com"
+			},
+			{
+				id : "folder",
+				title : "folder",
+				iconURL : iconPath + "file_folder.png",
+				url : path+"demo/grid/grid_base.html"
+			},
+			{
+				id : "big",
+				title : "clock",
+				iconURL : iconPath+ "big.png",
+				url : "app/big.html"
+			},
+			{
+				id : "workflow",
+				title : "workflow",
+				iconURL : iconPath+ "workflow.png",
+				url : "app/workflow.html"
+			},
+			{
+				id : "email",
+				title : "email",
+				iconURL : iconPath+ "email.png",				
+				url : "app/email.html"
+			},
+			{
+				id : "attendance",
+				title : "attendance",
+				iconURL : iconPath+ "attendance.png",
+				url : "app/attendance.html"
+			}			
+		],
+		onClick : function(data){
+			alert(data.url);
+		}
+	});
+});
+
+</script>
+</head>
+<body>
+	<div id="dock" ></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+.breeze-grid .paging{
+	height : 26px;
+	line-height : 26px;
+	border-top : 1px solid #99bbe8;
+	background : 	#D3E1F1;
+	color : 	#333333;
+	overflow : hidden;
+	font-size : 13px;
+}
+.breeze-grid .paging a{
+	word-spacing : 4px;
+	white-space : nowrap;
+	margin-left : 5px;
+	color : 	#333333;
+}
+.breeze-grid .paging a.disabled{
+	color : #999999;
+	cursor : default;
+	text-decoration : none;
+}
+.breeze-grid .paging span.label{
+	margin-right : 5px;
+	float : right;
+}
+.breeze-grid .paging span.current{
+	margin-left : 5px;
+}
+.breeze-grid .paging input{
+	width : 25px;
+	position : relative;
+	top : -1px;
+	margin-left : 5px;
+	margin-right : 2px;
+}
+.breeze-grid .paging button{
+	padding : 0;
+	margin : 0;
+	position : relative;
+	top : 1px;
+}

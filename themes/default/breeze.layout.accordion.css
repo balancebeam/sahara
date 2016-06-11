@@ -1,0 +1,81 @@
+.breeze-accordion{
+	overflow: hidden;
+	text-align: left;
+	position: relative;
+}
+.breeze-accordion .accordion-item{	
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 26px;
+}
+.breeze-accordion .accordion-item .accordion-header{
+	border: 1px solid #99bce8 ;
+	padding: 4px 5px 5px 5px;
+	overflow: hidden;
+	height: 15px;
+	cursor: default;
+	background: #d9e7f8;
+}
+.breeze-accordion .accordion-item .accordion-icon{
+	float: left;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	margin: 0px 4px 4px 0px;
+	background: url(images/accordion_icon.png);
+}
+.breeze-accordion .accordion-item .accordion-collapse{
+	float: right;
+	width: 15px;
+	height: 15px;
+	overflow: hidden;
+	margin: 0.5px 3px 4px 5px;
+	background: url(images/global-sprites.gif) no-repeat 0px -240px;
+}
+.breeze-accordion .accordion-item .accordion-collapse:hover{
+	background-position: -15px -240px;
+}
+.breeze-accordion .accordion-item .accordion-title{
+	overflow: hidden;
+	height: 15px;
+	font: 12px verdana;
+}
+.breeze-accordion .accordion-item .accordion-body{
+	overflow: hidden;
+	border-left: 1px solid #99bce8;
+	border-right: 1px solid #99bce8;
+	background-color: #FFF;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 26px;
+	bottom: 0;
+}
+.breeze-accordion .accordion-item.collapsed .accordion-collapse{
+	background-position: 0px -255px;
+}
+.breeze-accordion .accordion-item.collapsed .accordion-collapse:hover{
+	background-position: -15px -255px;
+}
+.accordion-noborder .accordion-item .accordion-header,
+.accordion-noborder .accordion-item .accordion-body{
+	border-left: 0;
+	border-right: 0;
+}
+.accordion-noborder .accordion-item-firstchild .accordion-header{
+	border-top: 1px solid transparent;
+}
+.accordion-noborder .accordion-item-lastchild .accordion-header{
+	border-bottom: 1px solid transparent;
+}
+.accordion-item-lastchild .accordion-body{
+	border-bottom: 1px solid #99bce8;
+}
+.accordion-noborder .accordion-item-lastchild.collapsed .accordion-header{
+	border-bottom: 1px solid #99bce8;
+}
+.accordion-noborder .accordion-item-lastchild .accordion-body{
+	border-bottom: 1px solid transparent;
+}

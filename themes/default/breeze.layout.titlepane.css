@@ -1,0 +1,56 @@
+.breeze-titlepane{
+	overflow : hidden;
+	width : auto;
+}
+.breeze-titlepane>.header{
+	width : auto;
+	overflow : hidden;
+	border : 1px solid #99bce8;
+	height : 15px;
+	padding : 5px 4px 4px 5px;
+	overflow : hidden;
+	background : #cbddf3 url(images/titlepane-header-bg.gif) ;
+}
+.breeze-titlepane>.header>.title{
+	font : bold 11px helvetica, tahoma, verdana, sans-serif;
+	color : #04408c;
+	overflow : hidden;
+}
+.breeze-titlepane>.header>.toggle{
+	float : right;
+	width : 15px;
+	height : 15px;
+	overflow : hidden;
+	background : url(images/global-sprites.gif) no-repeat 0px -195px; 
+}
+.breeze-titlepane>.header>.toggle:hover{
+	background-position : -15px -195px;	
+}
+.breeze-titlepane>.header.on>.toggle{
+	background-position : 0px -210px;	
+}
+.breeze-titlepane>.header.on>.toggle:hover{
+	background-position : -15px -210px;	
+}
+.breeze-titlepane>.header>.buttons{
+	width : auto;
+	height : 15px;	
+	overflow : hidden;
+	float : right;
+}
+.breeze-titlepane>.header>.buttons>.button{
+	font : 12px Arial, Verdana, Helvetica, sans-serif;
+	text-decoration : none;
+	padding : 0;
+	border : 0;
+	width : 15px;
+	height : 15px;
+	margin-left : 2px;
+}
+.breeze-titlepane>.body{
+	width : auto;
+	overflow : hidden;
+	background-color : #FFF;
+	border : 1px solid #99bce8;
+	border-top : 0;
+}

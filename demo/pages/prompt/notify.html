@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>自动提示</title>
+<script type="text/javascript" context="{}">
+$(function(){	
+	var context = getOwnerContext(),
+		notifyNode = $("#nofiy",context);
+	notifyNode.notify({
+		delay : 5000
+	});
+	notifyNode.notify("resize");
+	$("#InfoNotify",context).button({
+		title: "Info",
+		onClick: function(){
+			notifyNode.notify("addNotify",{
+				title: "Information Resources",
+				summary: "There are some other great scripts created and maintained by rlemon.",
+				iconClass: "info"			
+			});
+		}
+	});
+	$("#WarnNotify",context).button({
+		title: "Warning",
+		onClick: function(){
+			notifyNode.notify("addNotify",{
+				title: "Warning Resources",
+				summary: "There are some other great scripts created and maintained by rlemon.",
+				iconClass: "warn"			
+			});
+		}
+	});
+	$("#OkNotify",context).button({
+		title: "Ok",
+		onClick: function(){
+			notifyNode.notify("addNotify",{
+				title: "Ok Resources",
+				summary: "There are some other great scripts created and maintained by rlemon.",
+				iconClass: "ok"
+			});
+		}
+	});
+	$("#ErrorNotify",context).button({
+		title: "Error",
+		onClick: function(){
+			notifyNode.notify("addNotify",{
+				title: "Error Resources",
+				summary: "There are some other great scripts created and maintained by rlemon.",
+				iconClass: "error"
+			});
+		}
+	});
+	$("#customIconNotify",context).button({
+		title: "Custom",
+		onClick: function(){
+			notifyNode.notify("addNotify",{
+				title: "Custom Icon Resources",
+				summary: "There are some other great scripts created and maintained by rlemon.",
+				iconURL : breeze.getBreezeContextPath()+"/demo/css/images/desktop/big.png"
+			});
+		}
+	});
+	$("#noTitleNotify",context).button({
+		title: "NoTitle",
+		onClick: function(){
+			notifyNode.notify("addNotify",{
+				summary: "There are some other great scripts created and maintained by rlemon.",
+				iconClass: "info"
+			});
+		}
+	});
+	$("#closeNotify",context).button({
+		title: "Closable",
+		onClick: function(){
+			notifyNode.notify("addNotify",{
+				title: "Close Button Resources",
+				summary: "There are some other great scripts created and maintained by rlemon.",
+				iconClass: "info",
+				closebtn: true,
+				autoClose: false,
+				onClose : function(){
+					alert(1);
+				}
+			});
+		}
+	});
+});
+</script>
+</head>
+<body>	
+	<style>
+		.notify-button{
+			margin: 10px 0 0 10px;
+			width: 100px;
+		}
+	</style>
+	<div class="notify-button" id="InfoNotify">InfoNotify</div>
+	<div class="notify-button" id="WarnNotify">WarnNotify</div>
+	<div class="notify-button" id="OkNotify">OkNotify</div>
+	<div class="notify-button" id="ErrorNotify">ErrorNotify</div>
+	<div class="notify-button" id="customIconNotify">CustomIconNotify</div>
+	<div class="notify-button" id="noTitleNotify">noTitleNotify</div>
+	<div class="notify-button" id="closeNotify">closeNotify</div>
+	<div id="nofiy"></div>
+</body>
+</html>

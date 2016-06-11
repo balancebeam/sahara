@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>菜单导航</title>
+<script type="text/javascript" src="menu_data.js"></script>
+<script type="text/javascript" context="{}">
+$(function(){
+	$("#navigator",getOwnerContext()).tree({
+		root : {
+			visibility: false
+		},
+		dataProvider : [  
+			{title : "下来菜单", id:"menu",children:[
+				{title : "横向菜单",id:"menu_horizontal",url:"pages/menu/menu_horizontal.html"},
+				{title : "纵向菜单",id:"menu_vertical",url:"pages/menu/menu_vertical.html"}
+			]},
+			{title: "快捷菜单",id:"dock",url:"pages/menu/dock.html"}
+		],
+		onClick : function(treeNode){
+			var data = treeNode.getData();
+			if(data.url){
+				var dataProvider = $("#tabs").tabs("getDataProvider");
+				for(var i=0,d;d =dataProvider[i];i++){
+					if(data.url == d.url){
+						$("#tabs").tabs("selectTab",i);
+						return;
+					}				
+				}
+				$("#tabs").tabs("addTab",{
+					url : data.url,
+					title : data.title,
+					closable : true,
+					iconURL : "css/images/node-tree.png"
+				});
+			}
+			else{
+				treeNode.toggle();
+			}
+		}		
+	});
+	$("#navigator",getOwnerContext()).tree("expandAll");
+});
+
+</script>
+</head>
+<body>
+	<div id="navigator" style="overflow:auto;height:100%;"></div>
+</body>
+</html>

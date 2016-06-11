@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>基本数据表格</title>
+
+<script type="text/javascript" src="../../../lib/grid/breeze.grid.js"></script>
+<script type="text/javascript" src="../../../lib/grid/breeze.grid.scroller.js"></script>
+
+<script type="text/javascript" src="grid_data.js"></script>
+
+<script type="text/javascript" context="{}">
+$(function(){
+	var element = $("#grid",getOwnerContext());
+	element.grid({
+		height : "100%",
+		width : "100%",
+		noborder : true,
+		layout : [
+			[[
+				{title:"company",width : 200,filedIndex : 0},
+				{title:"price",width : 100,filedIndex : 1},
+				{title:"change",width : 100,filedIndex : 2, format : change},
+				{title:"pctChange",width : 100,filedIndex : 3, format : change},
+				{title:"lastChange",width : 100,filedIndex : 4}
+			]]
+		],		
+		dataProvider : gridDataProvider
+	});
+	element.grid("resize");
+});
+
+</script>
+</head>
+<body>
+	<div id="grid" ></div>
+</body>
+</html>

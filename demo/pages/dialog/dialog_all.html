@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>对话窗口</title>
+<script type="text/javascript" src="grid_base.js"></script>
+<script type="text/javascript" context="{}">
+$(function(){
+	var context = getOwnerContext();
+	$("#openIframeDialog",context).button({
+		title: "Iframe",
+		onClick: function(e){
+			var dialog = $("#dialog",context);
+			dialog.dialog({
+				title : "Iframe",
+				url  : "http://www.baidu.com",
+				pattern : "iframe",
+				fixed2body: true,
+				modal : true,
+				maximize : true			
+			});	
+			dialog.dialog("open",e);
+		}
+	});	
+	$("#openXhrDialog",context).button({
+		title: "XHR",
+		onClick: function(e){
+			var dialog2 = $("#dialog2",context);	
+			dialog2.dialog({
+				title : "XHR",		
+				modal : true,
+				url  : "pages/dialog/grid_xhr.html",		
+				icon: "css/images/grid.png",
+				maximize : true		
+			});			
+			dialog2.dialog("open",e);
+		}
+	});
+	$("#openCallbackDialog",context).button({
+		title: "Callback",
+		onClick: function(e){
+			var dialog3 = $("<div></div>");	
+			dialog3.dialog({
+				title : "Callback",
+				get : function(callback){
+					var element = $("<div></div>");
+					element.grid({
+						height : "100%",
+						width : "100%",
+						noborder : true,
+						layout : [
+							[[
+								{title:"company",width : 200,filedIndex : 0},
+								{title:"price",width : 100,filedIndex : 1},
+								{title:"change",width : 100,filedIndex : 2, format : change},
+								{title:"pctChange",width : 100,filedIndex : 3, format : change},
+								{title:"lastChange",width : 100,filedIndex : 4}
+							]]
+						],	
+						plugins : {
+							resizable : true,
+							draggable : true
+						},
+						dataProvider : gridDataProvider
+					});
+					setTimeout(function(){
+						callback(element);
+					},500);				
+				},
+				onload : function(){
+				},
+				maximize : true,
+				onClose : function(){
+					dialog3.remove();
+				}
+			});	
+			dialog3.appendTo('body');
+			dialog3.dialog("open",e);
+		}
+	});
+	$("#openSuitableDialog",context).button({
+		title: "Suitable",
+		onClick: function(e){
+			var dialog4 = $("<div></div>");
+			dialog4.dialog({
+				title : "Suitable",
+				url  : "pages/dialog/grid_suitable.html",
+				suitable : true,
+				onClose : function(){
+					dialog4.remove();
+				}
+			});	
+			dialog4.appendTo('body');
+			dialog4.dialog("open",e);
+			}
+	});	
+});
+</script>
+</head>
+<body>	
+	<style>
+	.dialog-button{
+		margin: 10px 0 0 10px;
+		width: 100px;
+	}
+	</style>
+	<div class="dialog-button" id="openIframeDialog">Iframe窗口</div>
+	<div class="dialog-button" id="openXhrDialog">XHR窗口</div>
+	<div class="dialog-button" id="openCallbackDialog">callback窗口</div>
+	<div class="dialog-button" id="openSuitableDialog">suitable窗口</div>
+	<div id="dialog"></div>
+	<div id="dialog2"></div>
+</body>
+</html>

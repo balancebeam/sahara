@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home</title>
+
+<link rel="stylesheet" type="text/css" href="../../../themes/default/breeze.uncompressed.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../lib/jquery/themes/base/jquery.ui.all.css"></link>
+<style>
+	body{
+		background: #EEE url(../../css/images/bg.png);
+	}
+</style>
+<script type="text/javascript" src="../../../lib/jquery-1.6.js"></script>
+<script type="text/javascript" src="../../../lib/jquery/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../../../lib/jquery/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../../../lib/jquery/jquery.ui.mouse.js"></script>
+<script type="text/javascript" src="../../../lib/jquery/jquery.ui.draggable.js"></script>
+<script type="text/javascript" src="../../../lib/jquery/jquery.ui.resizable.js"></script>
+<script type="text/javascript" src="../../../lib/breeze.js"></script>
+<script type="text/javascript" src="../../../lib/layout/breeze.container.js"></script>
+<script type="text/javascript" src="../../../lib/desktop/breeze.metro.js"></script>
+
+
+<script type="text/javascript">
+	$(function(){
+		$("#metro").metro({
+			untitled: true,
+			onClick: function(data){
+				alert(data.id);
+			},
+			draggable: true,
+			resizable: true,
+			size: 100,
+			column: 9,
+			layout: "free",
+			dataProvider:[
+				{
+					id: "1",
+					row: 1,
+					col: 1,
+					title: "基本表格",
+					color: "darkblue",
+					iconURL : ["../../css/images/metro/tshirt.jpg"]					
+				},
+				{
+					id: "2",
+					row: 1,
+					col: 1,
+					title: "编辑表格",
+					color: "red",
+					iconURL : "../../css/images/metro/king.jpg"
+				},
+				{
+					id: "3",
+					row: 2,
+					col: 1,
+					title: "翻页表格",
+					color: "orange",
+					iconURL : "../../css/images/metro/beckham.jpg"
+				},
+				{
+					id: "4",
+					row: 1,
+					col: 2,
+					title: "拖拽表格",
+					color: "red",
+					iconURL : "../../css/images/metro/ferguson.jpg"
+				},
+				{
+					id: "5",
+					row: 2,
+					col: 2,
+					title: "合并单元格",
+					color: "purple",
+					iconURL : ["../../css/images/metro/ronaldo.jpg","../../css/images/metro/rooney.jpg","../../css/images/metro/tshirt.jpg"],
+					animation: "flipping",
+					orientation: "horizontal"
+				},
+				{
+					id: "6",
+					row: 1,
+					col: 1,
+					title: "手风琴",
+					color: "red",
+					iconURL : "../../css/images/metro/rooney.jpg"
+				},
+				{
+					id: "7",
+					row: 1,
+					col: 1,
+					title: "伸缩容器",
+					color: "grey",
+					iconURL : "../../css/images/metro/ronaldo.jpg"
+				},
+				{
+					id: "8",
+					row: 1,
+					col: 2,
+					title: "方位布局",
+					color: "orange",
+					iconURL : "../../css/images/metro/paper.jpg"
+				},
+				{
+					id: "9",
+					row: 1,
+					col: 2,
+					title: "消息提示",
+					color: "purple",
+					iconURL : "../../css/images/metro/rio.jpg"
+				},				
+				{
+					id: "11",
+					row: 3,
+					col: 3,
+					title: "个人主页",
+					color: "green",
+					iconURL : ["../../css/images/metro/ronaldo.jpg","../../css/images/metro/rooney.jpg","../../css/images/metro/tshirt.jpg"],
+					animation: "rolling",
+					orientation: "horizontal"
+				},
+				{
+					id: "12",
+					row: 2,
+					col: 4,
+					title: "电子表单",
+					color: "darkblue",
+					iconURL : "../../css/images/metro/ferguson.jpg"
+				},
+				{
+					id: "10",
+					row: 3,
+					col: 2,
+					title: "弹出窗口",
+					color: "yellow",
+					iconURL : "../../css/images/metro/group.jpg"
+				},
+				{
+					id: "13",
+					row: 1,
+					col: 3,
+					title: "编辑树",
+					color: "red",
+					iconURL : "../../css/images/metro/champ.jpg"
+				},
+				{
+					id: "14",
+					row: 1,
+					col: 3,
+					title: "时间轴",
+					color: "green",
+					iconURL : ["../../css/images/metro/wallpaper.jpg","../../css/images/metro/paper.jpg"],
+					animation: "flipping",
+					orientation: "vertical"
+				}
+			]
+
+});	
+$("#metro").metro("resize");
+});
+var i = 0;
+function changesize(){
+	$("#metro").metro("changeSize",80+20*i);
+	i++;
+	i= i%3;
+}
+</script>
+
+</head>
+<body>
+	<button onclick="changesize()">改变大小</button>
+	<div id="metro">	</div>
+</body>
+</html>

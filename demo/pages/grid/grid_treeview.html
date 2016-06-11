@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>树型表格</title>
+
+
+<script type="text/javascript" context="{}">
+
+$(function(){
+	var element = $("#grid",getOwnerContext());
+	element.grid({
+		height : "100%",
+		width : "100%",
+		noborder: true,
+		layout : [
+			[[
+				{title:"price",width : 100,filedIndex : "price"},
+				{title:"change",width : 100,filedIndex : "change"},
+				{title:"pctChange",width : 100,filedIndex : "pctChange"},
+				{title:"lastChange",width : 100,filedIndex : "lastChange"}
+			]]
+		],		
+		dataProvider : [
+			{company:'3m Co',                               price:71.72, change:0.02,  pctChange:0.03,  lastChange:'9/1 12:00am',
+			children:[
+					{company:'Intel Corporation',                   price: 19.88,change: 0.31,pctChange:  1.58, lastChange: '9/1 12:00am'},
+	                {company:'International Business Machines',   price:   81.41, change:0.44,pctChange:  0.54, lastChange: '9/1 12:00am'},
+	                {company:'Johnson & Johnson',                  price:  64.72, change:0.06,  pctChange:0.09,  lastChange:'9/1 12:00am',
+	                children:[
+					{company:'Intel Corporation',                   price: 19.88,change: 0.31,pctChange:  1.58, lastChange: '9/1 12:00am'},
+	                {company:'International Business Machines',   price:   81.41, change:0.44,pctChange:  0.54, lastChange: '9/1 12:00am'},
+	                {company:'Johnson & Johnson',                  price:  64.72, change:0.06,  pctChange:0.09,  lastChange:'9/1 12:00am'}	
+				]
+	                
+	                }	
+				]
+			},
+	        {company:'Alcoa Inc',                          price:  29.01, change:0.42, pctChange: 1.47,  lastChange:'9/1 12:00am'},
+	        {company:'Altria Group Inc',                   price:  83.81, change:0.28,  pctChange:0.34, lastChange: '9/1 12:00am'},
+	        {company:'American Express Company',      price:       52.55, change:0.01, pctChange: 0.02, lastChange: '9/1 12:00am'},
+	        {company:'American International Group, Inc.',  price: 64.13,change: 0.31,pctChange:  0.49,lastChange:  '9/1 12:00am',
+	        children:[
+					{company:'Intel Corporation',                   price: 19.88,change: 0.31,pctChange:  1.58, lastChange: '9/1 12:00am'},
+	                {company:'International Business Machines',   price:   81.41, change:0.44,pctChange:  0.54, lastChange: '9/1 12:00am'}]},
+	        {company:'Altria Group Inc',                   price:  83.81, change:0.28,  pctChange:0.34, lastChange: '9/1 12:00am'},
+	        {company:'American Express Company',      price:       52.55, change:0.01, pctChange: 0.02, lastChange: '9/1 12:00am'},
+	        {company:'American International Group, Inc.',  price: 64.13,change: 0.31,pctChange:  0.49,lastChange:  '9/1 12:00am'},
+	        {company:'Altria Group Inc',                   price:  83.81, change:0.28,  pctChange:0.34, lastChange: '9/1 12:00am'},
+	        {company:'American Express Company',      price:       52.55, change:0.01, pctChange: 0.02, lastChange: '9/1 12:00am'},
+	        {company:'American International Group, Inc.',  price: 64.13,change: 0.31,pctChange:  0.49,lastChange:  '9/1 12:00am'}
+		],
+		plugins : {
+			treeview : {
+				filedIndex : "company",
+				title : "company"
+			},
+			resizable : true
+		}
+	});
+	element.grid("resize");
+});
+
+</script>
+</head>
+<body>
+	<div id="grid"></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>树组件导航</title>
+<script type="text/javascript" context="{}">
+$(function(){
+	var demo = $("#tree",getOwnerContext()),
+		dataProvider = [
+			{id:"1",title:"Node1",children:[
+				{id:"11",title:"Node11"}
+			]},
+			{id:"2",title:"Node2"},
+			{id:"3",title:"Node3"}
+		];
+	demo.tree({
+		dataProvider : dataProvider,
+		plugins:{
+			logic:{type:"none"}
+		},
+		xhr : function(data,callback){
+			setTimeout(function(){
+				switch(data.id){
+					case "11":
+						callback([{id:"111",title:"Node111",leaf:true},{id:"112",title:"Node112"},{id:"113",title:"Node113",leaf:true},{id:"114",title:"Node114",leaf:true}]);
+						break;
+					case "2":
+						callback([{id:"21",title:"Node21",leaf:true}]);
+						break;
+					case "3" :
+						callback([]);
+						break;
+					case "112":
+						callback([]);
+						break;
+				}
+			},500);
+		}
+	});	
+	$("#checkAll",getOwnerContext()).click(function(e){
+		demo.tree("getPlugin","logic").checkAll(true);
+	});
+	$("#disCheckAll",getOwnerContext()).click(function(e){
+		demo.tree("getPlugin","logic").disCheckAll();
+	});
+});
+
+</script>
+</head>
+<body>
+	<button id="checkAll">Select Node</button>
+	<button id="disCheckAll">Cancel Selected Node</button>
+	<div id="tree"></div>
+</body>
+</html>

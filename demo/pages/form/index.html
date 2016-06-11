@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Form Demo</title>
+<script type="text/javascript">
+$(function(){
+	$("#viewer").borderlayout({
+		regions : [{
+			region: 'center',
+			untitled : true,
+			html: '#contents'
+		},{
+			region: 'west',
+			collapsible: true,
+			title: 'Navigator',
+			split: true,
+			width: 280,
+			html: '#navigator',
+			draggable : true
+		}]		
+	});
+	$("#navigator").accordion({
+		noborder : true,
+		loadItem: function(item,callback){
+			var node = $("<div></div>");
+			node.tree({
+				root: {
+					visibility: false
+				},
+				dataProvider: item.children,
+				onClick : function(treeNode){
+					var data = treeNode.getData();
+					if(data.url){
+						var dataProvider = $("#contents").tabs("getDataProvider");
+						for(var i=0,d;d =dataProvider[i];i++){
+							if(data.url == d.url){
+								$("#contents").tabs("selectTab",i);
+								return;
+							}				
+						}
+						$("#contents").tabs("addTab",{
+							url : data.url,
+							title : data.title,
+							closable : true,
+							iconURL : "css/images/form.png"
+						});
+					}
+				}
+			});
+			callback(node);
+		},
+		dataProvider : [
+				{				
+					id: "form",
+					title : "Form",
+					iconURL : "css/images/accordion_icon.png",					
+					children:[
+						{title : "Button",id:"form_button",url:"pages/form/button_all.html"}
+					]
+				}
+		]	
+	});	
+	$("#contents").tabs({
+		noborder : true,
+		height : "100%",
+		dataProvider : [{
+			id: "introduction",
+			title: "introduction",
+			iconURL : "css/images/info.png",
+			url: "pages/form/introduction.html"
+		}],
+		plugins: {
+			contextmenu: true
+		}
+	});
+});
+
+</script>
+</head>
+<body>
+	<div id="viewer">
+		<div id="navigator"></div>
+		<div id="contents"></div>
+	</div>
+</body>
+</html>

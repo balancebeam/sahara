@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>综合用例</title>
+
+<script type="text/javascript" context="{}">
+
+$(function(){
+	var element = $("#grid",getOwnerContext());
+	element.grid({
+			percentage : false,
+			width: "100%",
+			height : "100%",
+			noborder: true,
+			autoHeight : false,
+			layout : [
+				[[
+					{title:"company",width : 200,filedIndex : 0},
+					{title:"price",width : 100,filedIndex : 1,dataType:"number",dropmenu:false,draggable:false},
+					{title:"change",width : 100,filedIndex : 2, format : change,lockedRowFormat : change,dataType:"number",sortable: false},
+					{title:"pctChange",width : 100,filedIndex : 3, format : change,lockedRowFormat : change,dataType:"number"},
+					{title:"lastChange",width : 100,filedIndex : 4,hidden:false}
+				]]
+			],		
+			untitled : false,
+			plugins : {
+				dropmenu : true,
+				draggable : true,
+				resizable : true,
+				sortable : true,
+				toolbar : {
+					filedIndex : 0
+				},
+				rownumber : true,
+				paging : {
+					dataProvider : gridDataProvider,
+					perPageRowCount : 15
+				},
+				lockrow : {
+					dataProvider  : [
+		 				["WorkMan Stores, Inc.",34.34,0.35,1.12,'9/1 12:00am'],
+						["WorkMan Stores, Inc.",34.34,0.35,1.12,'9/1 12:00am']
+					],
+					position : "top"
+				},
+				selectable : {
+					checklogic : "multiple" //single
+				}
+			}
+		});
+	element.grid("resize");
+});
+
+</script>
+</head>
+<body>
+	<div id="grid" ></div>
+</body>
+</html>

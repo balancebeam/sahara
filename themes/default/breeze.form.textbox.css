@@ -1,0 +1,77 @@
+﻿.breeze-textbox{
+	position: relative;
+	display: inline-block;
+	width: 200px;
+	height: 21px;
+}
+.breeze-textbox>.wrapper{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.breeze-textbox>.wrapper>.textbox{
+	text-indent: 5;
+	vertical-align: middle;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #B5B8C8;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 1px 3px;
+	background: #FFF url(images/textbox-bg.gif) repeat-x;
+}
+.breeze-textbox>.required{
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 5px;
+	overflow: hidden;
+	color: red;
+	line-height: 200%;
+	display: none;	
+}
+.breeze-textbox.required>.wrapper{
+	right: 5px;
+}
+.breeze-textbox.required>.required{
+	display: block;
+}
+.breeze-textbox>.arrow{
+	width: 17px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	border-bottom: 1px solid #B5B8C8;
+	background: url(images/trigger.gif) 0 0;
+}
+.breeze-textbox.arrow>.wrapper{
+	right: 17px;
+}
+.breeze-textbox.required.arrow>.wrapper{
+	right: 22px;
+}
+.breeze-textbox.required.arrow>.arrow{
+	right: 5px;
+}
+.breeze-textbox.focus>.wrapper>.textbox{
+	border: 1px solid #7EADD9;
+}
+.breeze-textbox.focus>.arrow{
+	background: url(images/trigger.gif) -17px 0;
+	border-bottom: 1px solid #7EADD9;
+}
+.breeze-textbox>.arrow:hover{
+	background: url(images/trigger.gif) -17px 0;
+	border-bottom: 1px solid #7EADD9;
+}
+.breeze-textbox.invalid>.wrapper>.textbox{
+	border: 1px solid #CC3300;
+	background: url(images/invalid_line.gif) repeat-x left bottom;
+}
+

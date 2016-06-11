@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>数据表格导航</title>
+
+<script type="text/javascript" context="{}">
+$(function(){
+	$("#navigator",getOwnerContext()).tree({
+		root : {
+			visibility: false
+		},
+		dataProvider : [             
+			{title : "基本表格",id:"grid_base",url:"pages/grid/grid_base.html"},
+			{title : "数据结构",id:"grid_objectlist",url:"pages/grid/grid_objectlist.html"},   
+			{title : "大数据量",id:"grid_largedata",url:"pages/grid/grid_largedata.html"},
+			{title : "多层标题",id:"grid_multitle",url:"pages/grid/grid_multitle.html"},
+			{title : "隐藏标题",id:"grid_hideheader",url:"pages/grid/grid_hideheader.html"},
+			{title : "自动宽度",id:"grid_autowidth",url:"pages/grid/grid_autowidth.html"},
+			{title : "自动高度",id:"grid_autoheight",url:"pages/grid/grid_autoheight.html"},
+			{title : "宽百分比",id:"grid_percentage",url:"pages/grid/grid_percentage.html"},
+			{title : "排序功能",id:"grid_sortable",url:"pages/grid/grid_sortable.html"},
+			{title : "改变列宽",id:"grid_resizable",url:"pages/grid/grid_resizable.html"},
+			{title : "锁定多列",id:"grid_lockcolumn",url:"pages/grid/grid_lockcolumn.html"},
+			{title : "锁定多行",id:"grid_lockrow",url:"pages/grid/grid_lockrow.html"},
+			{title : "调整位置",id:"grid_draggable",url:"pages/grid/grid_draggable.html"},
+			{title : "弹出菜单",id:"grid_dropmenu",url:"pages/grid/grid_dropmenu.html"},
+			{title : "本地翻页",id:"grid_paging",url:"pages/grid/grid_paging.html"},
+			{title : "拖动翻页",id:"grid_lazypaging",url:"pages/grid/grid_lazypaging.html"},
+			{title : "工具条栏",id:"grid_toolbar",url:"pages/grid/grid_toolbar.html"},
+			{title : "多选选择",id:"grid_selectable",url:"pages/grid/grid_selectable.html"},
+			{title : "单选选择",id:"grid_singleselectable",url:"pages/grid/grid_singleselect.html"},
+			{title : "综合应用",id:"grid_composite",url:"pages/grid/grid_composite.html"},
+			{title : "树形表格",id:"grid_tree",url:"pages/grid/grid_treeview.html"},	
+			{title : "合并单元格",id:"grid_group",url:"pages/grid/grid_mergecol.html"},	
+			{title : "行列编辑",id:"grid_edit",url:""}					
+		],
+		onClick : function(treeNode){
+			var data = treeNode.getData();
+			if(data.url){
+				var dataProvider = $("#tabs").tabs("getDataProvider");
+				for(var i=0,d;d =dataProvider[i];i++){
+					if(data.url == d.url){
+						$("#tabs").tabs("selectTab",i);
+						return;
+					}				
+				}
+				$("#tabs").tabs("addTab",{
+					url : data.url,
+					title : data.title,
+					closable : true,
+					iconURL : "css/images/grid.png"
+				});
+			}
+		}
+	});
+});
+
+</script>
+</head>
+<body>
+	<div id="navigator" style="overflow:auto;height:100%;"></div>
+</body>
+</html>

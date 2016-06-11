@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sahara Home</title>
+
+<link rel="stylesheet" type="text/css" href="../themes/default/breeze.uncompressed.css"></link>
+<link rel="stylesheet" type="text/css" href="../lib/jquery/themes/base/jquery.ui.all.css"></link>
+<style>
+ #components{
+	left: 50%;
+	margin-left: -520px;
+	right: auto;
+	top: 50%;
+	margin-top: -195px;
+	bottom: auto;
+ }
+ #logo{
+	margin: auto;
+	color: #FFF;
+	font-size: 90px;
+	font-weight: bold;
+	font-family: Old English Text MT;
+	text-align: center;
+	padding: 10px;
+ }
+ #copyright{
+	position: absolute;
+	bottom: 2px;
+	text-align: center;
+	width: 100%;
+	color: #FFF;
+	font-size: 14px;
+ }
+  #copyright>span{
+	font-family: Old English Text MT;
+	font-size: 16px;
+  }
+ body{
+	overflow: hidden;
+ }
+</style>
+<script type="text/javascript" src="../lib/jquery-1.6.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.mouse.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.draggable.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.ui.resizable.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.container.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.borderlayout.min.js"></script>
+
+<script type="text/javascript" src="../lib/min/breeze.desktop.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.desktop.taskbar.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.desktop.dock.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.shortcut.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.metro.min.js"></script>
+
+<script type="text/javascript" src="../lib/min/breeze.dialog.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.messagebox.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.form.button.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.tree.min.js"></script>
+
+<script type="text/javascript" src="../lib/min/breeze.menu.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.dock.min.js"></script>
+
+<script type="text/javascript" src="../lib/min/breeze.grid.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.grid.scroller.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.grid.dropmenu.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.grid.toolbar.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.grid.draggable.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.grid.resizable.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.grid.paging.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.grid.lockrow.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.grid.sortable.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.grid.selectable.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.grid.rownumber.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.grid.mergecol.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.grid.treeview.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.portal.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.accordion.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.tabs.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.dock.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.tabs.contextmenu.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.notify.min.js"></script>
+<script type="text/javascript" src="../lib/min/breeze.titlepane.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	$("#components").metro({
+		width: 1040,
+		height: 390,
+		onClick: function(data,e){
+			var node = $("<div></div>");
+			node.dialog({
+				title: data.title+" Demo",
+				url: data.url,
+				width: 1000,
+				height: 500,
+				maximize: true,
+				icon: data.iconURL,
+				onClose : function(){
+					node.remove();
+				}
+			});
+			node.appendTo('body');
+			node.dialog("open",e);
+		},
+		draggable: false,
+		resizable: false,
+		removable: false,
+		size: 120,
+		color: "darkblue",
+		column: 8,
+		layout: "free",
+		dataProvider: [	
+			{
+				id: "grid",
+				row: 2,
+				col: 2,
+				title: "Grid",
+				color2: "red",
+				url:"pages/grid/index.html",
+				iconURL : "images/grid.png"
+			},
+			{
+				id: "form",
+				row: 1,
+				col: 1,
+				title: "Form",
+				color2: "red",
+				url:"pages/form/index.html",
+				iconURL : "images/form.png"
+			},
+			{
+				id: "dialog",
+				row: 1,
+				col: 1,
+				title: "Dialog",
+				color2: "green",
+				url:"pages/dialog/dialog_all.html",
+				iconURL : "images/dialog.png"
+			},
+			{
+				id: "borderlayout",
+				row: 1,
+				col: 1,
+				title: "Borderlayout",
+				color2: "red",
+				url:"pages/layout/borderlayout.html",
+				iconURL : "images/borderlayout.png"
+			},
+			{
+				id: "tabs",
+				row: 1,
+				col: 1,
+				title: "Tabs",
+				color2: "darkblue",
+				url:"pages/layout/tabs.html",	
+				iconURL : "images/tab.png"
+			},
+			{
+				id: "portal",
+				row: 1,
+				col: 1,
+				title: "Portal",
+				color2: "red",
+				url:"pages/portal/portal.html",
+				iconURL : "images/portal.png"
+			},
+			{
+				id: "titlepane",
+				row: 1,
+				col: 1,
+				title: "Titlepane",
+				color2: "green",
+				url:"pages/layout/titlepane.html",
+				iconURL : "images/titlepane.png"
+			},
+			{
+				id: "menu",
+				row: 1,
+				col: 1,
+				title: "Menu",
+				color2: "darkblue",
+				url:"pages/menu/index.html",
+				iconURL : "images/menu.png"					
+			},
+			{
+				id: "tree",
+				row: 2,
+				col: 1,
+				title: "Tree",
+				color2: "orange",
+				url:"pages/tree/index.html",
+				iconURL : "images/tree.png"
+			},	
+			{
+				id: "timeline",
+				row: 1,
+				col: 1,
+				title: "Timeline",
+				color2: "green",
+				url:"pages/timeline/timeline.html",
+				iconURL : "images/timeline.png"
+			},
+			{
+				id: "desktop",
+				row: 2,
+				col: 2,
+				title: "Desktop",
+				color2: "purple",
+				url:"pages/desktop/index.html",
+				iconURL : "images/desktop.png"	
+			},	
+			{
+				id: "calender",
+				row: 1,
+				col: 1,
+				title: "Calender",
+				color2: "yellow",
+				url:"pages/form/calender.html",
+				iconURL : "images/calender.png"
+			},
+			{
+				id: "message",
+				row: 1,
+				col: 1,
+				title: "Message",
+				color2: "grey",
+				url:"pages/dialog/messagebox_all.html",
+				iconURL : "images/message.png"
+			},
+			{
+				id: "notify",
+				row: 1,
+				col: 1,
+				title: "Notify",
+				color2: "orange",
+				url:"pages/prompt/notify.html",
+				iconURL : "images/notify.png"
+			},
+			{
+				id: "tooltip",
+				row: 1,
+				col: 1,
+				title: "Tooltip",
+				color2: "purple",
+				url:"pages/prompt/tooltip.html",
+				iconURL : "images/tooltip.png"
+			},
+			{
+				id: "combobox",
+				row: 1,
+				col: 1,
+				title: "Combobox",
+				color2: "green",
+				url:"pages/form/combobox.html",
+				iconURL : "images/combobox.png"
+			},
+			{
+				id: "contact",
+				row: 1,
+				col: 1,
+				title: "Contact Me",
+				color2: "green",
+				url:"contact.html",
+				iconURL : "images/contact.png"
+			}
+		]
+	});
+	$("#components").metro("resize");
+});
+</script>
+</head>
+<body background="images/bg.jpg">
+	<div id="logo">Sahara</div>
+	<div id="components"></div>
+	<div id="copyright">@2013 <span>Sahara</span> ,License MIT</div>
+</body>
+</html>

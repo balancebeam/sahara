@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>布局容器</title>
+
+<script type="text/javascript" context="{}">
+$(function(){
+	var container = $("#tabs2",getOwnerContext());
+	container.tabs({
+		height : "400px",
+		width : "700px",
+		noborder : false,
+		dataProvider : [{
+			id : "aa",
+			title : "New Tab1",
+			selected : true,
+			html : "#aa"
+		},
+		{
+			id : "bb",
+			title : "New Tab2",
+			icon : "bb",
+			closable : true,
+			selected : true,
+			html : "#bb"
+		},
+		{
+			id : "cc",
+			title : "New Tab3",
+			icon : "bb",
+			html : "#cc"
+		},
+		{
+			id : "dd",
+			title : "New Tab1",
+			html : "helloworld"
+			
+		},
+		{
+			id : "ee",
+			title : "New Tab1",			
+			html : "#ee"
+		}
+		]	
+	});
+	container.tabs("resize");
+	$("#addTab",getOwnerContext()).click(function(){
+		container.tabs("addTab",{
+				html : new Date().toString(),
+				title : "new Tab",
+				closable : true,
+				iconURL : "css/images/tabs_icon.gif"
+			});
+	});
+});
+</script>
+</head>
+<body>
+	<button id="addTab">NewTab</button>	
+	<div id="tabs2" style="margin:5px;"></div>	
+</body>
+</html>

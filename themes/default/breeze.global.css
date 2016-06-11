@@ -1,0 +1,114 @@
+html, body{
+	height : 100%;
+}
+body { 
+	color : #333; 
+	font : normal 12px Arial, Verdana, Helvetica, sans-serif; 
+	background-color : #FFF; 
+}
+html, body, div, span, dl, dt, dd, ul, ol, li, pre, form, fieldset, blockquote, p, h1, h2, h3, h4, h5, h6{ 
+	padding : 0; 
+	margin : 0; 
+}
+img{ 
+	border : none;
+}
+input,select{
+	vertical-align : middle;
+}
+.breeze-noselectable{
+	-moz-user-select : none;
+	-webkit-user-select : none;
+}
+.breeze-pagemask{
+	overflow : hidden;
+	position : fixed;
+	left : 0px;
+	top : 0px;
+	width : 100%;
+	height : 100%;
+	display : none;
+	z-index : 100;  
+}
+.breeze-pagemask>*{
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	/*
+	filter: alpha(opacity=90);
+	opacity:0.9;
+	*/
+	background: #CCC;
+}
+.breeze-pagemask>.chunkA{
+	left: 0;
+	top: 0;
+}
+.breeze-pagemask>.chunkB{
+	top: 0;
+	right: 0;
+}
+.breeze-pagemask>.chunkC{
+	left: 0;
+	bottom: 0;
+}
+.breeze-pagemask>.chunkD{
+	right: 0;
+	bottom: 0;
+}
+.breeze-ajaxmask{
+	position : fixed;
+	left : 0px;
+	top : 0px;
+	width : 100%;
+	height : 100%;
+	display : none;
+	z-index : 1000;  
+}
+.breeze-ajaxmask>.mask{
+	background : #FFF;
+	width : 100%;
+	height : 100%;
+	filter: alpha(opacity=0);
+	opacity:.0;
+}
+.breeze-ajaxmask>.detail{
+	position : absolute;
+	/*
+	left : 50%;
+	top : 50%;
+	width : 200px;
+	height : 50px;
+	*/
+	right : 0px;
+	top : 0px;
+	width : 200px;
+	height : 21px;	
+}
+.breeze-ajaxmask>.detail>.shift{
+	background : #FFF;
+	position : relative;
+	/*
+	left : -50%;
+	top : -50%;
+	*/
+	width : 100%;
+	height : 21px;
+	line-height : 21px;
+	overflow : hidden;
+	text-align : right;
+}
+.breeze-ajaxmask>.detail>.shift>label{
+	font-size : 13px;
+	font-weight : bold;
+	font-style : italic ;
+	padding-right : 5px;
+}
+.breeze-boxloading{
+	z-index : 2;
+	width : 100%;
+	height : 100%;
+	overflow : hidden;
+	background :  #fff url(images/loading.gif) no-repeat center center; 
+}

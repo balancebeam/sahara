@@ -1,0 +1,392 @@
+.breeze-desktop{
+	position: relative;
+	overflow: hidden;
+	-moz-user-select: none;
+	-webkit-user-select:none;
+}
+.breeze-desktop .desktop-nav{
+	position: absolute;
+	top: 10px;
+	width: 100%;
+	height: 26px;
+	z-index: 1;
+	text-align: center;
+}
+.breeze-desktop .desktop-nav .nav1{
+	padding-left: 25px;
+	height: 26px;
+	display: inline-block;
+	background: url(images/desktop-nav-left.png) no-repeat;
+}
+.breeze-desktop .desktop-nav .nav2{
+	padding-right: 15px;
+	height: 26px;
+	position: relative;
+	background: url(images/desktop-nav-right.png) no-repeat right top;
+	white-space: nowrap;
+}
+.breeze-desktop .desktop-nav .screens{	
+	height: 26px;
+	white-space: nowrap;
+	display: inline-block;
+}
+.breeze-desktop .desktop-nav .screen{	
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	background: url(images/desktop-nav-btn.png);	
+}
+.breeze-desktop .desktop-nav .screen-more{
+	width: 26px;
+	height: 26px;
+	background: url(images/desktop-nav-more.png);
+	display: inline-block;
+}
+.breeze-desktop .desktop-nav .selected{	
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	background: url(images/desktop-nav-active.png);
+}
+.breeze-desktop .desktop-body{
+	position: absolute;	
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: url(images/desktop-bg.jpg);
+}
+.breeze-desktop .desktop-body .desktop-viewport{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.breeze-desktop .desktop-body .desktop-screen{
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+
+/************************************  screens *****************************************/
+
+.breeze-desktop   .screen-dialog .screens{
+	width: 100%;
+	height: 100%;
+	overflow: auto;	
+}
+.breeze-desktop  .screen-dialog .screen{
+	position: relative;
+	width: 238px;
+	height: 120px;
+	line-height: 120px !important;
+	margin: 5px;
+	color: #FFF;
+	float: left;
+	text-align: center;
+	cursor: default;
+	font: bold 36px tahoma,arial,verdana,sans-serif; 
+	background: url(images/desktop-screen.png);
+}
+.breeze-desktop   .screen-dialog .screen .remove{
+	position: absolute;
+	top: 2px;
+	right: 10px;
+	overflow: hidden;
+	width: 32px;
+	height: 32px;	
+	background: url(images/desktop-screen-remove.png);
+}
+.breeze-desktop .screen-dialog .screen-add{
+	background: url(images/desktop-screen-add.png);
+}
+
+/************************************  taskbar *****************************************/
+
+.breeze-desktop .desktop-taskbar{
+	height: 27px;
+	background-color: #D3E1F1;
+	border-top: 1px solid #99BCE8;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding-left: 85px; 
+	padding-right: 85px; 
+	z-index: 2;	
+}
+.breeze-desktop .desktop-taskbar .start{
+	position: absolute;
+	left: 4px;
+	top: 3px;
+	width: 58px;
+	height: 22px;
+	padding-left: 10px;
+	cursor: default;
+	white-space: nowrap;
+}
+.breeze-desktop .desktop-taskbar .start div{	
+	padding: 3px 5px 3px 0px;
+	width: 53px;
+	height: 16px;
+	overflow: hidden;
+}
+.breeze-desktop .desktop-taskbar .start img{
+	width: 16px;
+	height: 16px;
+	border: 0;
+	background: url(images/desktop-start.png);
+	vertical-align: middle;
+}
+.breeze-desktop .desktop-taskbar .start span{
+	padding-left: 5px;	
+	vertical-align: middle;
+	font: 12px tahoma,arial,verdana,sans-serif;
+	color: #333333;
+	overflow: hidden;
+}
+.breeze-desktop .desktop-taskbar .start:hover{
+	background: url(images/desktop-taskbar-shortcut-hover.png);
+}
+.breeze-desktop .desktop-taskbar .start:hover div{
+	background: #D3E1F1 url(images/desktop-taskbar-shortcut-hover.png) right top;
+}
+.breeze-desktop .desktop-taskbar .splitter{
+	position: absolute;
+	top: 7px;
+	width: 0px;
+	height: 14px;
+	border-left: 1px solid #98C8FF;
+	border-right: 1px solid #FFF;
+	overflow: hidden;
+}
+.breeze-desktop .desktop-taskbar .splitter.left{
+	left: 78px;
+}
+.breeze-desktop .desktop-taskbar .splitter.right{
+	right: 78px;
+}
+.breeze-desktop .start-menu{
+	position: absolute;
+	bottom: 23px;
+	left: 4px;
+	width: 300px;
+	height: 300px;
+	border: 1px solid #99BCE8;
+	z-index: 5;
+}
+.breeze-desktop .start-menu .header{
+	border-bottom: 1px solid #99BCE8;
+	padding: 5px 4px 3px 4px;
+	height: 16px;
+	overflow: hidden;
+	background: url(images/borderlayout-header-top-bg.gif);
+}
+.breeze-desktop .start-menu .header .icon{
+	padding: 0;
+	marggin: 0;
+	width: 16px;
+	height: 16px;
+	float: left;
+}
+.breeze-desktop .start-menu .header .title{
+	color:  #04408C;
+	font: bold 11px tahoma,arial,verdana,sans-serif;
+	padding: 1px 2px 2px 5px;
+	float: left;
+}
+.breeze-desktop .start-menu .body{
+	width: 179px;
+	height: 275px;
+	float: left;
+	background: #F0F0F0;
+	overflow: auto;
+}
+.breeze-desktop .start-menu .breeze-menu .root-menu{
+	width: auto;
+	position: static;
+	background: transparent;
+	border: 0;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+.breeze-desktop .start-menu .settings{
+	width: 120px;
+	height: 275px;	
+	float: right;
+	border-left: 1px solid #99BCE8;
+	background: #D3E1F1;
+}
+.breeze-desktop .start-menu .settings .setting{
+	margin: 3px auto 0px auto;
+	padding: 2px 5px;
+	line-height: 16px;
+	width: 85px; 
+	border: 1px solid transparent;
+	cursor: default;
+}
+.breeze-desktop .start-menu .settings .setting:first-child{
+	margin-top: 5px;
+}
+.breeze-desktop .start-menu .settings .setting img{
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+}
+.breeze-desktop .start-menu .settings .setting span{
+	color: #333333;
+    font-family: tahoma,arial,verdana,sans-serif;
+    font-size: 11px;
+	padding-left: 10px;
+	vertical-align: middle;
+}
+.breeze-desktop .start-menu .settings .seperator{
+	margin: 3px auto 0px auto;
+	height: 0px;
+	border-top: 1px solid #98C8FF;
+	border-bottom: 1px solid #FFF;
+	overflow: hidden;
+	width: 86px;
+}
+.breeze-desktop .start-menu .settings .setting:hover{
+	border: 1px solid #81A4D0;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background: #BBD2F0;
+	background: -moz-linear-gradient(top, #DAEDFF, #BDD5F4);
+	background:-webkit-gradient(linear, 0 0, 0 bottom, from(#DAEDFF), to(#BDD5F4)); 
+}
+.breeze-desktop .desktop-taskbar .scrollBar{
+	padding-top: 3px;
+	padding-bottom: 2px;
+	height: 22px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.breeze-desktop .desktop-taskbar .scrollLeft{
+	display: none;
+	float: left;	
+	margin-right: 5px;
+	width: 18px;
+	height: 20px;
+	border-bottom: 1px solid #8DB2E3;
+	overflow: hidden;
+	background: url("images/tabs-scroller-left.gif") no-repeat -18px 0;
+}
+.breeze-desktop .desktop-taskbar .scrollLeft.disabled{
+	background: url("images/tabs-scroller-left.gif") no-repeat;
+	opacity: 0.5;
+	filter: alpha(opacity=50);	
+}
+.breeze-desktop .desktop-taskbar .scrollRight{
+	display: none;
+	float: right;
+	margin-left: 5px;
+	width: 18px;
+	height: 20px;
+	border-bottom: 1px solid #8DB2E3;
+	overflow: hidden;
+	background: url("images/tabs-scroller-right.gif") no-repeat;	
+}
+.breeze-desktop .desktop-taskbar .scrollRight.disabled{
+	background: url("images/tabs-scroller-right.gif") no-repeat -18px 0;
+	opacity: 0.5;
+	filter: alpha(opacity=50);	
+}
+.breeze-desktop .desktop-taskbar .shortcuts{	
+	height: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+}
+.breeze-desktop .desktop-taskbar .shortcut{
+	height: 22px;
+	display: inline-block;
+	padding-left: 5px;	
+	margin-right: 5px;
+	cursor: default;		
+}
+.breeze-desktop .desktop-taskbar .shortcut div{
+	white-space: nowrap;
+	padding: 3px 25px 3px 0px;
+	height: 16px;
+	overflow: hidden;
+} 
+.breeze-desktop .desktop-taskbar .shortcut img{
+	border: 0;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+}
+.breeze-desktop .desktop-taskbar .shortcut span{
+	display: inline-block;
+	padding-left: 5px;
+	height: 16px;
+	line-height: 16px !important;
+	font: 12px tahoma,arial,verdana,sans-serif;
+	color: #333333;	
+	overflow: hidden;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+.breeze-desktop .desktop-taskbar .actived{
+	background: url(images/desktop-taskbar-shortcut-actived.png) !important;
+}
+.breeze-desktop .desktop-taskbar .actived div{
+	background: #D3E1F1 url(images/desktop-taskbar-shortcut-actived.png) right top !important;
+}
+.breeze-desktop .desktop-taskbar .shortcut:hover{
+	background: url(images/desktop-taskbar-shortcut-hover.png);
+}
+.breeze-desktop .desktop-taskbar .shortcut:hover div{
+	background: #D3E1F1 url(images/desktop-taskbar-shortcut-hover.png) right top;
+}
+.breeze-desktop .desktop-taskbar .timer{
+	position: absolute;
+	height: 16px;
+	width: 68px;
+	top: 6px;
+	right: 5px;
+	color: #4C4C4C;
+	font: 11px tahoma,arial,verdana,sans-serif;
+	line-height: 16px;
+	vertical-align: middle;
+	text-align: center;
+}
+.breeze-desktop  .shortcut-menu{
+	height: 159px;
+	width: 150px;
+	z-index: 2;
+	position: absolute;
+}
+.breeze-desktop .drag-proxy{
+	position : absolute;
+	padding-left : 18px;
+	height : 25px;
+	line-height : 25px;
+	z-index : 10;
+	border : 1px solid #E1E1E1;
+	background : #F7F7F7 url(images/grid-drop-no.gif) no-repeat 2px 4px;
+	-moz-box-shadow:2px 2px 2px #333333;
+	-webkit-box-shadow:2px 2px 2px #333333;
+}
+.breeze-desktop .drag-proxy.on{
+	background : #F7F7F7 url(images/grid-drop-yes.gif) no-repeat 2px 4px;
+}
+.breeze-desktop .drag-proxy label{
+	white-space : nowrap;
+	padding : 0 5px;
+}
+.breeze-desktop .breeze-dock{
+	z-index: 5;
+}
+.breeze-desktop .breeze-metro{
+	position: relative;
+	top: 70px;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	margin: auto;
+}

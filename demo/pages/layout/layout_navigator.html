@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>容器导航</title>
+<script type="text/javascript" context="{}">
+$(function(){
+	$("#navigator",getOwnerContext()).tree({
+		root : {
+			visibility: false
+		},
+		dataProvider : [             
+			{title : "方位布局",id:"borderlayout",children:[
+					{id:"borderlayout_all",title:"方位布局一",url:"pages/layout/borderlayout_all.html"},
+					{id:"borderlayout_all2",title:"方位布局二",url:"pages/layout/borderlayout_all2.html"}					
+				]
+			},
+			{title : "伸缩容器",id:"titlepane",children:[
+					{id:"titlepane_basic",title:"基本",url:"pages/layout/titlepane_basic.html"}	,
+					{id:"titlepane_hp",title:"高度百分比",url:"pages/layout/titlepane_hp.html"}	,
+					{id:"titlepane_btns",title:"自定义按钮",url:"pages/layout/titlepane_btns.html"}	,
+					{id:"titlepane_notoggle",title:"不能关闭",url:"pages/layout/titlepane_notoggle.html"}					
+				]
+			},
+			{title : "多页容器",id:"tabs",children:[
+				{id:"tabs_basic",title:"基本",url:"pages/layout/tabs_basic.html"}	,
+				{id:"tabs_edit",title:"编辑",url:"pages/layout/tabs_edit.html"}			
+			]},
+			{title : "手风琴",id:"accordion",children:[
+				{id:"accordion_basic",title:"基本",url:"pages/layout/accordion_basic.html"}
+			]}			
+		],
+		onClick : function(treeNode){
+			var data = treeNode.getData();
+			if(data.url){
+				var dataProvider = $("#tabs").tabs("getDataProvider");
+				for(var i=0,d;d =dataProvider[i];i++){
+					if(data.url == d.url){
+						$("#tabs").tabs("selectTab",i);
+						return;
+					}				
+				}
+				$("#tabs").tabs("addTab",{
+					url : data.url,
+					title : data.title,
+					closable : true,
+					iconURL : "css/images/node-tree.png"
+				});
+			}
+			else{
+				treeNode.toggle();
+			}
+		}		
+	});
+	$("#navigator",getOwnerContext()).tree("expandAll");
+});
+
+</script>
+</head>
+<body>
+	<div id="navigator" style="overflow:auto;height:100%;"></div>
+</body>
+</html>

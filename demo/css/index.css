@@ -1,0 +1,52 @@
+#rootmenu{
+	height: 100%;
+	background: url(images/root.png) right top;
+}
+.root-inner{
+	height: 100%;
+	position: relative;
+	background: url(images/root.png) no-repeat;
+}
+.root-bar{
+	float: right;
+	height: 16px;
+	position: relative;
+	top: 50%;
+	margin-top: -8px;
+}
+.root-bar>div{
+	display: inline-block;
+}
+.root-user{
+	color: #04408C;
+	font-size: 12px;
+	position: relative;
+	top: -4px;
+	padding-right:5px;
+}
+.root-sperator{
+	color: #777777;
+	font-size: 12px;
+	position: relative;
+	top: -4px;
+	padding-right:5px;
+}
+.root-view{
+	background: url("images/windows.png");
+	cursor: default;		
+	height: 16px;
+	width: 16px;
+	margin-right: 10px;
+	overflow: hidden;		
+}
+.root-logout{
+	background: url("images/logout.png");
+	cursor: default;		
+	height: 16px;
+	width: 16px;
+	margin-right: 10px;
+	overflow: hidden;		
+}
+.root-logout:hover{
+	background: url("images/logout_hover.png");
+}

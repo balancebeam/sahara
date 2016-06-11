@@ -1,0 +1,101 @@
+﻿.breeze-button{
+	background-color: #F9F9F9;
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #F9F9F9 48%, #E2E2E2 52%, #E7E7E7);    
+    padding: 2px;
+	border: 1px solid #D1D1D1;
+	border-radius: 3px 3px 3px 3px;
+	background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+	text-align: center;
+    white-space: nowrap;	
+	height: 21px;
+}
+.breeze-button:hover{
+	background-color: #E4F3FF;
+	background-image: -moz-linear-gradient(center top,#E4F3FF,#D9EDFF 48%, #C2D8F2 52%,#C6DCF6);
+	border-color: #B0CCF2;
+}
+.breeze-button.pressed,
+.breeze-button.menu-opened{
+	background-color: #B6CBE4;
+	background-image: -moz-linear-gradient(center top,#B6CBE4,#BFD2E6 48%, #8DC0F5 52%,#98C5F5);
+	border-color: #9EBAE1;
+}
+.breeze-button.disabled{
+	background-color: #F7F7F7;
+    background-image: -moz-linear-gradient(center top , #F7F7F7, #F1F1F1 48%, #DADADA 52%, #DFDFDF);
+    border-color: #E1E1E1;
+	cursor: default;
+}
+.breeze-button .wrapper{
+	display: block;
+	height: 100%;
+}
+.breeze-button.disabled .wrapper{
+	opacity: 0.5;
+	filter: alpha(opacity=50);		
+}
+.breeze-button.dropArrow .wrapper{
+	background: transparent url("images/form-button-arrow.gif") no-repeat right center;
+	padding-right: 14px !important;	
+}
+.breeze-button .button{
+	position: relative;
+	background: transparent;
+    border: 0;
+    margin: 0;
+    outline: 0 none;
+    overflow: hidden;
+    padding: 0;
+    vertical-align: bottom;
+    width: auto;
+	cursor: pointer;
+	top: 50%;
+	margin-top: -9px;
+}
+.breeze-button .button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+.breeze-button .icon{
+	position: absolute;
+    height: 16px;
+    left: 0;
+    top: 0;
+    width: 16px;
+	display: none;
+	background-image: url("images/desktop-person.png") !important;
+}
+.breeze-button .title{
+	background-repeat: no-repeat;
+    color: #333333;
+    font-family: tahoma,arial,verdana,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    padding: 0 4px;
+	height: 16px;
+    line-height: 16px;   
+	display: block;
+	width: auto;
+    white-space: nowrap;
+}
+.breeze-button.yesIcon .icon{
+	display: block;
+}
+.breeze-button.noTitle .title{
+	
+}
+.breeze-button.yesIcon .title{
+	padding-left: 20px;
+}
+.breeze-button.yesIcon.noTitle .title{
+	padding-left: 12px;
+}
+.breeze-button>.dropmenu{
+	position: absolute;
+	left: -1px;
+}
+

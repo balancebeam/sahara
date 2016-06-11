@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>树组件导航</title>
+<script type="text/javascript" src="tree_data.js"></script>
+<script type="text/javascript" context="{}">
+$(function(){
+	$("#navigator",getOwnerContext()).tree({
+		root : {
+			visibility: false
+		},
+		dataProvider : [             
+			{title : "只读树",id:"tree_readonly",
+				children:[
+					{id:"tree_basic",title:"基础树",url:"pages/tree/tree_basic.html"},
+					{id:"tree_noroot",title:"隐藏根节点",url:"pages/tree/tree_noroot.html"},
+					{id:"tree_arraydata",title:" 平面数据",url:"pages/tree/tree_arraydata.html"},
+					{id:"tree_expandAll",title:"展开所有节点",url:"pages/tree/tree_expandall.html"},
+					{id:"tree_expand",title:"展开指定节点",url:"pages/tree/tree_expand.html"},
+					{id:"tree_select",title:"选中指定节点",url:"pages/tree/tree_select.html"},
+					{id:"tree_icon",title:"更换图标",url:"pages/tree/tree_icon.html"},
+					{id:"tree_exclusive",title:"互斥展开",url:"pages/tree/tree_exclusive.html"},
+					{id:"tree_onClick",title:"点击事件",url:"pages/tree/tree_onclick.html"},
+					{id:"tree_xhr",title:"异步加载",url:"pages/tree/tree_xhr.html"},
+					{id:"tree_refresh",title:"刷新结点",url:"pages/tree/tree_refresh.html"}
+				]
+			},
+			{title : "复选树",id:"tree_logic",
+				children:[
+					{id:"tree_nocasacade",title:"无关联",url:"pages/tree/tree_nocasacade.html"},					
+					{id:"tree_parentcascade",title:"父级联",url:"pages/tree/tree_parentcascade.html"},
+					{id:"tree_childrencascade",title:"子级联",url:"pages/tree/tree_childrencascade.html"},
+					{id:"tree_casacade",title:"父子级联",url:"pages/tree/tree_casacade.html"},
+					{id:"tree_halfcascade",title:"半选",url:"pages/tree/tree_halfcascade.html"},
+					{id:"tree_checkall",title:"全选",url:"pages/tree/tree_checkall.html"},
+					{id:"tree_setcheck",title:"设置选中",url:"pages/tree/tree_setcheck.html"},
+					{id:"tree_getcheck",title:"获取选中",url:"pages/tree/tree_getcheck.html"}
+				]
+			},
+			{title : "编辑树",id:"tree_edit",children:[
+				{id:"tree_addnode",title:"增加结点",url:"pages/tree/tree_addnode.html"},					
+				{id:"tree_removenode",title:"删除结点",url:"pages/tree/tree_removenode.html"},
+				{id:"tree_updatenode",title:"更新结点",url:"pages/tree/tree_updatenode.html"},
+				{id:"tree_slidenode",title:"调整顺序",url:"pages/tree/tree_slidenode.html"}
+			]},
+			{title : "拖拽树",id:"tree_drag",children:[
+				{id:"tree_traggable",title:"拖动节点",url:"pages/tree/tree_draggable.html"}
+			]}			
+		],
+		onClick : function(treeNode){
+			var data = treeNode.getData();
+			if(data.url){
+				var dataProvider = $("#tabs").tabs("getDataProvider");
+				for(var i=0,d;d =dataProvider[i];i++){
+					if(data.url == d.url){
+						$("#tabs").tabs("selectTab",i);
+						return;
+					}				
+				}
+				$("#tabs").tabs("addTab",{
+					url : data.url,
+					title : data.title,
+					closable : true,
+					iconURL : "css/images/node-tree.png"
+				});
+			}
+			else{
+				treeNode.toggle();
+			}
+		}		
+	});
+});
+
+</script>
+</head>
+<body>
+	<div id="navigator" style="overflow:auto;height:100%;"></div>
+</body>
+</html>

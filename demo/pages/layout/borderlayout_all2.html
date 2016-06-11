@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>布局容器</title>
+
+<script type="text/javascript" context="{}">
+$(function(){
+
+	var container = $("#borderlayout2",getOwnerContext());
+	container.borderlayout({
+		regions : [{
+			region: 'center',
+			title: 'Center',
+			html: 'grid'
+		},{
+			region: 'north',
+			collapsible: true,
+			untitled : true,
+			title: 'North',
+			split: true,
+			height: 50,
+			draggable : true,
+			html: 'North'
+		},{
+			region: 'west',
+			untitled : true,
+			collapsible: true,
+			title: 'West',
+			collapsed : false,
+			split: true,
+			width: 50,
+			minWidth: 50,
+			html: 'West',
+			draggable : true
+		},{
+			region: 'south',
+			untitled : true,
+			height: 50,
+			split: true,
+			collapsible: true,
+			draggable : true,
+			title: 'South',
+			html: 'South'
+		},{
+			region: 'east',
+			width: 50,
+			untitled : true,
+			split: true,
+			collapsible: true,
+			draggable : false,
+			title: 'East',
+			html: 'East'
+		}]		
+	});	
+	container.borderlayout("resize");
+});
+</script>
+</head>
+<body>
+	<div id="borderlayout2"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>树组件导航</title>
+<script type="text/javascript" context="{}">
+$(function(){
+	var demo = $("#tree",getOwnerContext());
+	demo.tree({
+		plugins: {
+			logic: {
+				type: "cascade"
+			}
+		},
+		dataProvider : treeDataProvider
+	});	
+	$("#getChecked").click(function(e){
+		alert(demo.tree("getPlugin","logic").getChecked());
+	});
+});
+
+</script>
+</head>
+<body>
+	<button id="getChecked">get Selected Node</button>
+	<div id="tree"></div>
+</body>
+</html>

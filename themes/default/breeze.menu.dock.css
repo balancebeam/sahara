@@ -1,0 +1,18 @@
+.breeze-dock{
+	position : absolute;
+	width : 100%;
+	visibility : hidden;
+	text-align : center;
+}
+.breeze-dock .dock-container{
+	visibility : visible;
+	margin : auto;
+	display : inline-block;
+	padding : 5px;	
+}
+
+.breeze-dock img{
+	position : relative;
+	margin : 0;
+}
+

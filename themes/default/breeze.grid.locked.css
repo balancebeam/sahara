@@ -1,0 +1,36 @@
+/*** 锁定列样式 ***/
+.breeze-grid .headers .header.locked.splitter .inner{
+	border-right : 1px solid #000;
+	right : 1px;
+}
+.breeze-grid .contents .content.locked.splitter .inner{
+	border-right : 1px solid #000;
+	right : 1px;
+}
+.breeze-grid .headers .header.locked.splitter .th.splitter{
+	border-right : 0;
+}
+.breeze-grid .contents .content.locked.splitter .td.splitter{
+	border-right : 0;
+}
+/*** 锁定行样式 ***/
+.breeze-grid .contents .content .viewport.locked.bottom div.td{
+	border-top : 1px solid #D0D0D0;
+	border-bottom : 0;
+}
+.breeze-grid .contents .content .viewport.locked.bottom tr.splitter div.td{
+	border-top : 0;
+}
+.breeze-grid .contents .content .viewport.locked.bottom .inner{
+	border-top : 1px solid #000;
+}
+.breeze-grid .contents .content .viewport.locked.top div.td{
+	border-top : 0;
+	border-bottom : 1px solid #D0D0D0;
+}
+.breeze-grid .contents .content .viewport.locked.top tr.splitter div.td{
+	border-bottom : 0;
+}
+.breeze-grid .contents .content .viewport.locked.top .inner{
+	border-bottom : 1px solid #000;
+}

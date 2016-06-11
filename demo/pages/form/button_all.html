@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Button</title>
+<script type="text/javascript" context="{}">
+$(function(){	
+	var context = getOwnerContext();
+	$("#text",context).button({
+		title: "The Button",
+		onClick: function(e){alert(1);}
+	});
+	$("#icon",context).button({
+		iconClass: "ff"		
+	});
+	$("#textIcon",context).button({
+		iconClass: "ff",
+		title: "The Button"
+	});
+	$("#width",context).button({
+		title: "The Button"
+	});
+	$("#height",context).button({
+		iconClass: "ff",
+		title: "The Button"
+	});
+	$("#disabled",context).button({
+		iconClass: "ff",
+		title: "The Button",
+		disabled: true
+	});
+	$("#dropmenu",context).button({
+		iconClass: "ff",
+		title: "The Button",
+		dropmenu:{
+			dataProvider:[
+				{title : "Basic Grid",id:"grid_base",url:"pages/grid/grid_base.html",iconURL:"css/images/menu.png"},
+				{title : "Struct Grid",id:"grid_objectlist",url:"pages/grid/grid_objectlist.html",iconURL:"css/images/menu.png"},   
+				{title : "Largedata Grid",id:"grid_largedata",url:"pages/grid/grid_largedata.html",iconURL:"css/images/menu.png"}
+			],
+			onClick : function(data){
+			
+			}
+		}
+	});
+});
+</script>
+</head>
+<body>	
+	<div style="padding:10px;">
+		<div id="text"></div><br><br>
+		<div id="icon"></div><br><br>
+		<div id="textIcon"></div><br><br>
+		<div id="width" style="width:150px;"></div><br><br>
+		<div id="height" style="width:150px;height: 40px;"></div><br><br>
+		<div id="disabled"></div><br><br>
+		<div id="dropmenu"></div><br>
+	</div>
+</body>
+</html>

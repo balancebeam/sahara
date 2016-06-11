@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Tree Demo</title>
+<script type="text/javascript" src="tree_data.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#viewer").borderlayout({
+		regions : [{
+			region: 'center',
+			untitled : true,
+			html: '#contents'
+		},{
+			region: 'west',
+			collapsible: true,
+			title: 'Navigator',
+			split: true,
+			width: 280,
+			html: '#navigator',
+			draggable : true
+		}]		
+	});
+	$("#navigator").accordion({
+		noborder : true,
+		loadItem: function(item,callback){
+			var node = $("<div></div>");
+			node.tree({
+				root: {
+					visibility: false
+				},
+				dataProvider: item.children,
+				onClick : function(treeNode){
+					var data = treeNode.getData();
+					if(data.url){
+						var dataProvider = $("#contents").tabs("getDataProvider");
+						for(var i=0,d;d =dataProvider[i];i++){
+							if(data.url == d.url){
+								$("#contents").tabs("selectTab",i);
+								return;
+							}				
+						}
+						$("#contents").tabs("addTab",{
+							url : data.url,
+							title : data.title,
+							closable : true,
+							iconURL : "css/images/tree.png"
+						});
+					}
+				}
+			});
+			callback(node);
+		},
+		dataProvider : [
+				{title : "Readonly",id:"tree_readonly",
+				children:[
+					{id:"tree_basic",title:"Basic",url:"pages/tree/tree_basic.html"},
+					{id:"tree_noroot",title:"NoRoot",url:"pages/tree/tree_noroot.html"},
+					{id:"tree_arraydata",title:" ArrayData",url:"pages/tree/tree_arraydata.html"},
+					{id:"tree_expandAll",title:"ExpandAll",url:"pages/tree/tree_expandall.html"},
+					{id:"tree_expand",title:"ExpandOne",url:"pages/tree/tree_expand.html"},
+					{id:"tree_select",title:"Select",url:"pages/tree/tree_select.html"},
+					{id:"tree_icon",title:"SwapIcon",url:"pages/tree/tree_icon.html"},
+					{id:"tree_exclusive",title:"Exclusive",url:"pages/tree/tree_exclusive.html"},
+					{id:"tree_onClick",title:"OnClick",url:"pages/tree/tree_onclick.html"},
+					{id:"tree_xhr",title:"XHR",url:"pages/tree/tree_xhr.html"},
+					{id:"tree_refresh",title:"Refresh",url:"pages/tree/tree_refresh.html"}
+				]
+			},
+			{title : "Logical",id:"tree_logic",
+				children:[
+					{id:"tree_nocasacade",title:"NoCasacade",url:"pages/tree/tree_nocasacade.html"},					
+					{id:"tree_parentcascade",title:"ParentCascade",url:"pages/tree/tree_parentcascade.html"},
+					{id:"tree_childrencascade",title:"ChildrenCascade",url:"pages/tree/tree_childrencascade.html"},
+					{id:"tree_casacade",title:"Casacade",url:"pages/tree/tree_casacade.html"},
+					{id:"tree_halfcascade",title:"HalfCascade",url:"pages/tree/tree_halfcascade.html"},
+					{id:"tree_checkall",title:"CheckAll",url:"pages/tree/tree_checkall.html"},
+					{id:"tree_setcheck",title:"SetCheck",url:"pages/tree/tree_setcheck.html"},
+					{id:"tree_getcheck",title:"GetCheck",url:"pages/tree/tree_getcheck.html"}
+				]
+			},
+			{title : "Editable",id:"tree_edit",children:[
+				{id:"tree_addnode",title:"AddNode",url:"pages/tree/tree_addnode.html"},					
+				{id:"tree_removenode",title:"RemoveNode",url:"pages/tree/tree_removenode.html"},
+				{id:"tree_updatenode",title:"UpdateNode",url:"pages/tree/tree_updatenode.html"},
+				{id:"tree_slidenode",title:"SlideNode",url:"pages/tree/tree_slidenode.html"}
+			]},
+			{title : "Draggable",id:"tree_drag",children:[
+				{id:"tree_traggable",title:"TragNode",url:"pages/tree/tree_draggable.html"}
+			]}
+		]
+	});	
+	$("#contents").tabs({
+		noborder : true,
+		height : "100%",
+		dataProvider : [{
+			id: "introduction",
+			title: "introduction",
+			iconURL : "css/images/info.png",
+			url: "pages/tree/introduction.html"
+		}],
+		plugins: {
+			contextmenu: true
+		}
+	});
+	//$("#viewer").borderlayout("resize");	
+});
+
+</script>
+</head>
+<body>
+	<div id="viewer">
+		<div id="navigator"></div>
+		<div id="contents"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>窗口导航</title>
+<script type="text/javascript" context="{}">
+$(function(){
+	$("#navigator",getOwnerContext()).tree({
+		root : {
+			visibility: false
+		},
+		dataProvider : [             
+			{title : "弹出窗口",id:"dialog",url:"pages/dialog/dialog_all.html"},
+			{title : "消息窗口",id:"message",url:"pages/dialog/messagebox_all.html"},
+			{title : "自动提示",id:"notify",url:"pages/prompt/notify.html"}
+		],
+		onClick : function(treeNode){
+			var data = treeNode.getData();
+			if(data.url){
+				var dataProvider = $("#tabs").tabs("getDataProvider");
+				for(var i=0,d;d =dataProvider[i];i++){
+					if(data.url == d.url){
+						$("#tabs").tabs("selectTab",i);
+						return;
+					}				
+				}
+				$("#tabs").tabs("addTab",{
+					url : data.url,
+					title : data.title,
+					closable : true,
+					iconURL : "css/images/node-tree.png"
+				});
+			}
+			else{
+				treeNode.toggle();
+			}
+		}		
+	});
+	$("#navigator",getOwnerContext()).tree("expandAll");
+});
+
+</script>
+</head>
+<body>
+	<div id="navigator" style="overflow:auto;height:100%;"></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Widget</title>
+<script type="text/javascript">
+$(function(){
+	$("#portal").portal({
+		layout : "1,1,1",
+		dataProvider : [
+			[
+				{title:"Map",url : "pages/portal/map.html",settable:true,closable:true,height : 370}				
+			]
+			,[
+				{title:"Grid",url : "pages/portal/grid.html",settable:true,closable:true,height : 370}	
+			],
+			[
+				{title:"Chart",url : "pages/portal/chart.html",settable:true,closable:true,height : 370}
+			]
+		]	
+	});	
+	$("#portal").portal("resize");
+});
+</script>
+</head>
+<body>
+	<style>
+		.breeze-dialog .content{
+			background: url(images/square.gif) !important;
+		}
+	</style>
+	<div id="portal"></div>	
+</body>
+</html>

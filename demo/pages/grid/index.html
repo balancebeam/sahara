@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Grid Demo</title>
+<script type="text/javascript" src="grid_data.js"></script>
+<script type="text/javascript" src="grid_largedata.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#viewer").borderlayout({
+		regions : [{
+			region: 'center',
+			untitled : true,
+			html: '#contents'
+		},{
+			region: 'west',
+			collapsible: true,
+			title: 'Navigator',
+			split: true,
+			width: 280,
+			html: '#navigator',
+			draggable : true
+		}]		
+	});
+	$("#navigator").accordion({
+		noborder : true,
+		loadItem: function(item,callback){
+			var node = $("<div></div>");
+			node.tree({
+				root: {
+					visibility: false
+				},
+				dataProvider: item.children,
+				onClick : function(treeNode){
+					var data = treeNode.getData();
+					if(data.url){
+						var dataProvider = $("#contents").tabs("getDataProvider");
+						for(var i=0,d;d =dataProvider[i];i++){
+							if(data.url == d.url){
+								$("#contents").tabs("selectTab",i);
+								return;
+							}				
+						}
+						$("#contents").tabs("addTab",{
+							url : data.url,
+							title : data.title,
+							closable : true,
+							iconURL : "css/images/grid.png"
+						});
+					}
+				}
+			});
+			callback(node);
+		},
+		dataProvider : [
+				{				
+					id: "readonly",
+					title : "Readonly",
+					iconURL : "css/images/accordion_icon.png",					
+					children:[
+						{title : "Basic",id:"grid_base",url:"pages/grid/grid_base.html"},
+						{title : "DataObject",id:"grid_objectlist",url:"pages/grid/grid_objectlist.html"},   
+						{title : "LargeData",id:"grid_largedata",url:"pages/grid/grid_largedata.html"},						
+						{title : "Untitled",id:"grid_hideheader",url:"pages/grid/grid_hideheader.html"},
+						{title : "AutoWidth",id:"grid_autowidth",url:"pages/grid/grid_autowidth.html"},
+						{title : "AutoHeight",id:"grid_autoheight",url:"pages/grid/grid_autoheight.html"},
+						{title : "Percentage",id:"grid_percentage",url:"pages/grid/grid_percentage.html"},
+						{title : "SortCols",id:"grid_sortable",url:"pages/grid/grid_sortable.html"},
+						{title : "ResizeWidth",id:"grid_resizable",url:"pages/grid/grid_resizable.html"},
+						{title : "MutipleSelect",id:"grid_selectable",url:"pages/grid/grid_selectable.html"},
+						{title : "SingleSelect",id:"grid_singleselectable",url:"pages/grid/grid_singleselect.html"}
+					]
+				},
+				{				
+					id: "advanced",
+					title : "Advanced",
+					iconURL : "css/images/accordion_icon.png",					
+					children:[
+						{title : "MutilpleTitle",id:"grid_multitle",url:"pages/grid/grid_multitle.html"},
+						{title : "LockCols",id:"grid_lockcolumn",url:"pages/grid/grid_lockcolumn.html"},
+						{title : "LockRows",id:"grid_lockrow",url:"pages/grid/grid_lockrow.html"},
+						{title : "SwapCols",id:"grid_draggable",url:"pages/grid/grid_draggable.html"},
+						{title : "DropMenu",id:"grid_dropmenu",url:"pages/grid/grid_dropmenu.html"},
+						{title : "LocalPage",id:"grid_paging",url:"pages/grid/grid_paging.html"},
+						{title : "LazyPage",id:"grid_lazypaging",url:"pages/grid/grid_lazypaging.html"},
+						{title : "Toolbar",id:"grid_toolbar",url:"pages/grid/grid_toolbar.html"},						
+						{title : "Combination",id:"grid_composite",url:"pages/grid/grid_composite.html"},
+						{title : "TreeView",id:"grid_tree",url:"pages/grid/grid_treeview.html"},	
+						{title : "MergeCols",id:"grid_group",url:"pages/grid/grid_mergecol.html"}
+					]
+				},
+				{				
+					id: "editable",
+					title : "Editable",
+					iconURL : "css/images/accordion_icon.png",					
+					children:[
+						{title : "EditCols",id:"grid_editcols",url:""},
+						{title : "EditRows",id:"grid_editrows",url:""}
+					]
+				}
+		]	
+	});	
+	$("#contents").tabs({
+		noborder : true,
+		height : "100%",
+		dataProvider : [{
+			id: "introduction",
+			title: "introduction",
+			iconURL : "css/images/info.png",
+			url: "pages/grid/introduction.html"
+		}],
+		plugins: {
+			contextmenu: true
+		}
+	});
+	//$("#viewer").borderlayout("resize");	
+});
+
+</script>
+</head>
+<body>
+	<style>
+	 .tabbox{
+		overflow: hidden !important;
+	 }
+	</style>
+	<div id="viewer">
+		<div id="navigator"></div>
+		<div id="contents"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>消息窗口</title>
+<script type="text/javascript" context="{}">
+$(function(){	
+	var context = getOwnerContext();
+	$("#Alert",context).button({
+		title: "Alert",
+		onClick : function(){
+			MessageBox.alert("status","This is an Alert Window.");
+		}
+	});
+	$("#Info",context).button({
+		title: "Info",
+		onClick : function(){
+			MessageBox.info("status","This is a Info Window.");
+		}
+	});
+	$("#Warning",context).button({
+		title: "Warning",
+		onClick : function(){
+			MessageBox.warn("status","This is a Warning Window.");
+		}
+	});
+	$("#Question",context).button({
+		title: "Question",
+		onClick : function(){
+			MessageBox.question("status","This is a Question Window.");
+		}
+	});
+	$("#Error",context).button({
+		title: "Error",
+		onClick : function(){
+			MessageBox.error("status","This is a Error Window.");
+		}
+	});
+	$("#Confirm",context).button({
+		title: "Confirm",
+		onClick : function(){
+			MessageBox.confirm({
+				title: "confirm",
+				msg: "This is a Confirm Window.",
+				onOk : function(){
+					alert("ok");
+				},
+				onCancel : function(){
+					alert("cancel");
+				}
+			});
+		}
+	});
+	$("#Prompt",context).button({
+		title: "Prompt",
+		onClick : function(){
+			MessageBox.prompt({
+				title: "prompt",
+				msg: "This is a Prompt Window.",
+				onOk : function(value){
+					alert("ok : "+value);
+				},
+				onCancel : function(value){
+					alert("cancel : "+value);
+				}
+			});
+		}
+	});
+	$("#PromptMultiLine",context).button({
+		title: "PromptMultiLine",
+		onClick : function(){
+			MessageBox.prompt({
+				title: "prompt",
+				multiline: true,
+				msg: "This is a PromptMultiLine Window.",
+				onOk : function(value){
+					alert("ok : "+value);
+				},
+				onCancel : function(value){
+					alert("cancel : "+value);
+				}
+			});
+		}
+	});
+	$("#YNC",context).button({
+		title: "Yes/No/Cancel",
+		onClick : function(){
+			MessageBox.ync({
+				title: "Yes/No/Cancel",
+				msg: "This is a 'Yes/No/Cancel' Window.",
+				onOk : function(){
+					alert("ok");
+				},
+				onNo : function(){
+					alert("no");
+				},
+				onCancel : function(){
+					alert("cancel");
+				}
+			});
+		}
+	});
+	$("#Notify",context).button({
+		title: "Auto Notify",
+		onClick : function(){
+			MessageBox.notify({
+				title: "Auto Notify",
+				msg: "This is a Auto Notify Window.",
+				onClose : function(){
+				}
+			});
+		}
+	});		
+});
+</script>
+</head>
+<body>	
+	<style>
+		.messagebox-button{
+			margin: 10px 0 0 10px;
+			width: 100px;
+		}
+	</style>
+	<div class="messagebox-button" id="Alert">Alert</div>
+	<div class="messagebox-button" id="Info">Info</div>
+	<div class="messagebox-button" id="Warning">Warning</div>
+	<div class="messagebox-button" id="Question">Question</div>
+	<div class="messagebox-button" id="Error">Error</div>
+	<div class="messagebox-button" id="Confirm">Confirm</div>
+	<div class="messagebox-button" id="Prompt">Prompt</div>
+	<div class="messagebox-button" id="PromptMultiLine">Multi-line Prompt</div>
+	<div class="messagebox-button" id="YNC">Yes/No/Cancel</div>
+	<div class="messagebox-button" id="Notify">Notify</div>
+</body>
+</html>

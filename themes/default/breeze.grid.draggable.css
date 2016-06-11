@@ -1,0 +1,39 @@
+.breeze-grid .headers .drag-proxy{
+	position : absolute;
+	padding-left : 18px;
+	height : 25px;
+	line-height : 25px;
+	z-index : 2;
+	border : 1px solid #E1E1E1;
+	background : #F7F7F7 url(images/grid-drop-no.gif) no-repeat 2px 4px;
+	-moz-box-shadow:2px 2px 2px #333333;
+	-webkit-box-shadow:2px 2px 2px #333333;
+}
+.breeze-grid .headers .drag-proxy.on{
+	background : #F7F7F7 url(images/grid-drop-yes.gif) no-repeat 2px 4px;
+}
+.breeze-grid .headers .drag-proxy label{
+	white-space : nowrap;
+	padding : 0 5px;
+}
+.breeze-grid .headers .move-top{
+	position : absolute;
+	left : -1000px;
+	bottom : 21px;
+	width : 9px;
+	height : 9px;
+	overflow : hidden;
+	margin-left : -5px;
+	z-index : 2;
+	background : url(images/grid-move-top.gif);
+}
+.breeze-grid .headers .move-bottom{
+	position : absolute;
+	left : -1000px;
+	bottom : -9px;
+	width : 9px;
+	height : 9px;
+	overflow : hidden;
+	margin-left : -5px;
+	background : url(images/grid-move-bottom.gif);
+}

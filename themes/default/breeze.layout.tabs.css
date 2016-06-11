@@ -1,0 +1,135 @@
+.breeze-tabs{
+	position: relative;
+}
+.breeze-tabs>.tabbar{
+	padding-top: 4px;
+	height: 20px;
+	border: 1px solid #99BCE8;
+	background-color: #CBDBEF;	
+	background-image: -moz-linear-gradient(center top , #DDE8F5, #CBDBEF);
+	z-index: 2;
+	position: absolute;
+    top: 0;
+    left: 0;
+}
+.breeze-tabs.tabs-noboder>.tabbar{
+	border: 0;
+	border-bottom: 1px solid #99BCE8;	
+}
+.breeze-tabs>.tabbar .tabs-scroller-left{
+	display: none;
+	float: left;	
+	width: 18px;
+	height: 20px;
+	overflow: hidden;
+	background: url("images/tabs-scroller-left.gif") no-repeat -18px 0;
+}
+.breeze-tabs>.tabbar .tabs-scroller-left.disabled{
+	background: url("images/tabs-scroller-left.gif") no-repeat;
+	opacity: 0.5;
+	filter: alpha(opacity=50);	
+}
+.breeze-tabs>.tabbar .tabs-scroller-right{
+	display: none;
+	float: left;
+	width: 18px;
+	height: 20px;
+	overflow: hidden;
+	background: url("images/tabs-scroller-right.gif") no-repeat;	
+}
+.breeze-tabs>.tabbar .tabs-scroller-right.disabled{
+	background: url("images/tabs-scroller-right.gif") no-repeat -18px 0;
+	opacity: 0.5;
+	filter: alpha(opacity=50);	
+}
+.breeze-tabs>.tabbar>.tabs{	
+	float: left;
+	height: 21px;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+}
+.breeze-tabs>.tabbar .tab{	
+	margin-left: 2px;	
+	height: 20px;	
+	padding-left: 10px;
+	border-bottom: 1px solid #99BCE8;
+	background: #DFE8F6 url(images/tabs_bg.gif);
+	display: inline-block;
+	white-space: nowrap;
+	font: bold 11px helvetica, tahoma, verdana, sans-serif;
+	color: #416da3;
+	cursor: default;
+}
+.breeze-tabs>.tabbar .tab.selected{	
+	background: #DFE8F6 url(images/tabs_bg.gif) left -54px;
+}
+.breeze-tabs>.tabbar .tab:last-child{
+	margin-right: 2px;
+}
+.breeze-tabs>.tabbar .inner{	
+	padding-right: 10px;
+	padding-top: 4px;
+	padding-bottom: 3px;
+	overflow: hidden;
+	height: 13px;
+	position: relative;
+	background: #DFE8F6 url(images/tabs_bg.gif) right top;
+}
+.breeze-tabs>.tabbar .tab.selected .inner{	
+	background: #DFE8F6 url(images/tabs_bg.gif) right -54px;
+}
+.breeze-tabs>.tabbar .withicon{
+	padding-left: 21px;	
+}
+.breeze-tabs>.tabbar .icon{
+	position: absolute;
+	left: 0px;
+	top: 3px;
+	width: 16px;
+	height: 16px;
+}
+.breeze-tabs>.tabbar .title{
+	height: 13px;
+	vertical-align: middle;
+	overflow: hidden;
+	height: 100%;
+}	
+.breeze-tabs>.tabbar .withclose{
+	padding-right: 20px;
+}
+.breeze-tabs>.tabbar .close{	
+	position: absolute;
+	right: 3px;
+	top: 3px;
+	width: 11px;
+	height: 11px;
+	font-size: 1px;
+	background: url("images/tabs-close.gif");
+}	
+.breeze-tabs>.tabbar .tab.selected{
+	border-bottom: 1px solid #fff;
+}	
+.breeze-tabs>.tabboxs{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 25px;
+	bottom: 0;
+	border: 1px solid #99BCE8;
+	border-top: 0;	
+	z-index: 1;
+	overflow: hidden;
+}
+.breeze-tabs>.tabboxs>.tabbox{
+	width: 100%;
+	height: 100%;	
+	overflow: auto;
+	background-color: #FFF;
+}
+.tabs-noboder>.tabboxs{
+	border: 0;
+}
+.breeze-tabs>.tabbar .popmenu{
+	z-index: 2;
+}
